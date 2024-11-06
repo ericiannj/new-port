@@ -1,4 +1,13 @@
-import { X, House, UserRound, BookOpen, UsersRound, Code } from 'lucide-react';
+import {
+  X,
+  House,
+  UserRound,
+  BookOpen,
+  UsersRound,
+  Code,
+  Github,
+  Linkedin,
+} from 'lucide-react';
 import GlobeIcon from './assets/icons/GlobeIcon';
 import BrazilIcon from './assets/icons/BrazilIcon';
 
@@ -11,4 +20,6 @@ export const Icons = {
   contact: BookOpen,
   globe: GlobeIcon,
   brazil: BrazilIcon,
+  github: Github,
+  linkedin: Linkedin,
 };

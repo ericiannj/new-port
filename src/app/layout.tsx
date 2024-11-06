@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import TransitionWrapper from '../components/TransitionWrapper';
+import ContactsContainer from '@/components/ContactsContainer';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <div>
           <TransitionWrapper>{children}</TransitionWrapper>
+          <ContactsContainer />
           <Navbar />
         </div>
       </body>
