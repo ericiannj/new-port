@@ -1,25 +1,19 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import TransitionWrapper from '../components/TransitionWrapper';
 import ContactsContainer from '@/components/ContactsContainer';
-
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-});
+import { Rubik } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'Eric Junqueira',
   description: 'Eric Junqueira Portfolio',
 };
+
+const rubik = Rubik({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function RootLayout({
   children,
@@ -28,13 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      >
+      <body className={`${rubik.className} h-full antialiased`}>
         <div>
-          <TransitionWrapper>{children}</TransitionWrapper>
-          <ContactsContainer />
-          <Navbar />
+          <TransitionWrapper>
+            <>
+              {children}
+              <ContactsContainer />
+              <Navbar />
+            </>
+          </TransitionWrapper>
         </div>
       </body>
     </html>

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const GlobeIcon = ({
-  width = 72,
-  height = 72,
+  width = 96,
+  height = 96,
   fillColor = '#50A5DC',
   ...props
 }) => {

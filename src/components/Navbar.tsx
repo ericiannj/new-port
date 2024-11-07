@@ -9,7 +9,12 @@ export default function Navbar() {
   const pathName = usePathname();
 
   return (
-    <div className="absolute bottom-16 right-16">
+    <motion.div
+      className="absolute bottom-16 right-16"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <nav>
         <ul className="flex flex-col items-start space-y-8 p-4">
           <AnimatePresence key={pathName}>
@@ -19,6 +24,7 @@ export default function Navbar() {
                 initial={{ rotate: 0 }}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 0.25 }}
+                className="cursor-pointer"
               >
                 <Link href={page.url}>{page.icon}</Link>
               </motion.li>
@@ -26,7 +32,7 @@ export default function Navbar() {
           </AnimatePresence>
         </ul>
       </nav>
-    </div>
+    </motion.div>
   );
 }
 

@@ -11,10 +11,10 @@ export default function HomeTransition({ onEnd }: HomeTransitionProps) {
 
   useEffect(() => {
     if (index < languages.length - 1) {
-      const timer = setTimeout(() => setIndex(index + 1), 300);
+      const timer = setTimeout(() => setIndex(index + 1), 200);
       return () => clearTimeout(timer);
     } else {
-      const timer = setTimeout(onEnd, 300);
+      const timer = setTimeout(onEnd, 200);
       return () => clearTimeout(timer);
     }
   }, [index, onEnd]);
@@ -26,23 +26,13 @@ export default function HomeTransition({ onEnd }: HomeTransitionProps) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        style={{
-          fontSize: '2rem',
-          marginRight: '1rem',
-          padding: '1rem',
-        }}
+        className="m-8 mr-4 inline-block p-4 text-3xl"
       >
         {languages[index]}
         <div className="relative flex items-center justify-center">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 5, ease: 'linear' }}
-            style={{
-              fontSize: '4rem',
-              backgroundColor: 'transparent',
-              position: 'relative',
-              zIndex: 1,
-            }}
           >
             <Icons.globe size={64} />
           </motion.div>
