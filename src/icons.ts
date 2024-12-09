@@ -7,6 +7,7 @@ import {
   Code,
   Github,
   Linkedin,
+  Mail,
 } from 'lucide-react';
 import GlobeIcon from './assets/icons/GlobeIcon';
 import BrazilIcon from './assets/icons/BrazilIcon';
@@ -22,4 +23,5 @@ export const Icons = {
   brazil: BrazilIcon,
   github: Github,
   linkedin: Linkedin,
+  mail: Mail,
 };
