@@ -1,3 +1,4 @@
+'use client';
 import { Icons } from '@/icons';
 import { motion } from 'framer-motion';
 

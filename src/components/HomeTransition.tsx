@@ -26,10 +26,10 @@ export default function HomeTransition({ onEnd }: HomeTransitionProps) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        className="m-8 mr-4 inline-block p-4 text-3xl"
+        className="m-8 inline-block p-4 text-center text-3xl"
       >
         {languages[index]}
-        <div className="relative flex items-center justify-center">
+        <div className="relative mt-6 flex items-center justify-center">
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 5, ease: 'linear' }}
