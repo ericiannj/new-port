@@ -9,6 +9,7 @@ import {
   AnimatedSentences,
   Perspectives,
   Recommendations,
+  Stack,
   Summary,
 } from './components';
 
@@ -20,6 +21,7 @@ export default function About() {
     { id: 'summary', Component: Summary },
     { id: 'perspectives', Component: Perspectives },
     { id: 'recommendations', Component: Recommendations },
+    { id: 'stack', Component: Stack },
     // Add more components here as needed
   ];
 
