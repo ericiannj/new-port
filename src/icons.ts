@@ -7,6 +7,8 @@ import {
   Github,
   Linkedin,
   Mail,
+  ArrowRight,
+  ArrowLeft,
 } from 'lucide-react';
 import GlobeIcon from './assets/icons/GlobeIcon';
 
@@ -20,4 +22,6 @@ export const Icons = {
   github: Github,
   linkedin: Linkedin,
   mail: Mail,
+  arrowRight: ArrowRight,
+  arrowLeft: ArrowLeft,
 };

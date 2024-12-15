@@ -12,6 +12,7 @@ import {
   Stack,
   Summary,
 } from './components';
+import { Icons } from '@/icons';
 
 type Direction = 'next' | 'prev';
 
@@ -85,28 +86,30 @@ export default function About() {
                 </motion.div>
               </AnimatePresence>
               <div className="mt-4 flex justify-between">
-                <button
+                <motion.button
                   onClick={previousComponent}
                   disabled={currentIndex === 0}
                   className={`px-4 py-2 ${
                     currentIndex === 0
                       ? 'cursor-not-allowed opacity-50'
                       : 'opacity-100'
-                  } rounded bg-gray-300`}
+                  } rounded bg-blue-400 hover:bg-blue-300`}
+                  whileHover={{ scale: 1.2 }}
                 >
-                  Back
-                </button>
-                <button
+                  <Icons.arrowLeft size={16} />
+                </motion.button>
+                <motion.button
                   onClick={nextComponent}
                   disabled={currentIndex === components.length - 1}
                   className={`px-4 py-2 ${
                     currentIndex === components.length - 1
                       ? 'cursor-not-allowed opacity-50'
                       : 'opacity-100'
-                  } rounded bg-gray-300`}
+                  } rounded bg-blue-400 hover:bg-blue-300`}
+                  whileHover={{ scale: 1.2 }}
                 >
-                  Ahead
-                </button>
+                  <Icons.arrowRight size={16} />
+                </motion.button>
               </div>
             </div>
           </div>
