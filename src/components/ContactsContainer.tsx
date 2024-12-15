@@ -26,7 +26,7 @@ const ContactsContainer = () => {
           icon={<Icons.github />}
           label="GitHub Profile"
         />
-        <div className="h-36 w-0.5 space-y-4 bg-slate-200" />
+        <div className="h-24 w-0.5 space-y-4 bg-slate-200" />
       </div>
     </motion.div>
   );

@@ -12,6 +12,11 @@ const config: Config = {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      fontSize: {
+        'fluid-2xl': 'clamp(1.25rem, 2.5vw, 1.5rem)',
+        'fluid-6xl': 'clamp(1.5rem, 5vw, 4rem)',
+        'fluid-8xl': 'clamp(2rem, 8vw, 6rem)', // min: 2rem, scale: 8vw, max: 6rem
+      },
     },
   },
   plugins: [],
