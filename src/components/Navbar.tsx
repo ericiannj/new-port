@@ -52,14 +52,9 @@ const pages = [
     url: '/contact',
     icon: <Icons.contact />,
   },
-  {
-    title: 'Projects',
-    url: '/projects',
-    icon: <Icons.projects />,
-  },
-  {
-    title: 'Recommendations',
-    url: '/recommendations',
-    icon: <Icons.recommendations />,
-  },
+  // {
+  //   title: 'Projects',
+  //   url: '/projects',
+  //   icon: <Icons.projects />,
+  // },
 ];
