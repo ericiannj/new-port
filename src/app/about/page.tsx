@@ -70,9 +70,9 @@ export default function About() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div>
+          <div className="w-full">
             <h1 className="mb-4 text-4xl">Eric Junqueira</h1>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 text-justify">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={components[currentIndex].id}
