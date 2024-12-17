@@ -63,12 +63,33 @@ export default function About() {
       <AnimatedSentences />
       <div className="flex w-full flex-grow items-center justify-center">
         <div className="m-8 flex min-h-[400px] w-[80%] items-center space-x-8 rounded-md border-2 border-slate-200 p-4">
-          <div className="h-64 min-w-64 overflow-hidden rounded-full">
-            <Image
-              alt="profile image"
-              src={ProfileImage}
-              className="h-full w-full object-cover"
-            />
+          <div className="flex flex-col items-center gap-16">
+            <div className="h-64 min-w-64 overflow-hidden rounded-full">
+              <Image
+                alt="profile image"
+                src={ProfileImage}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              <p>More info available on </p>
+              <motion.a
+                href="https://www.linkedin.com/in/eric-junqueira/"
+                animate={{
+                  y: [0, -10, 0, -5, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeOut',
+                }}
+                style={{
+                  display: 'inline-block',
+                }}
+              >
+                <Icons.linkedin size={16} className="inline" />
+              </motion.a>
+            </div>
           </div>
           <div className="w-full">
             <h1 className="mb-4 text-4xl">Eric Junqueira</h1>
