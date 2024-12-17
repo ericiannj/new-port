@@ -1,3 +1,5 @@
+import Tooltip from '@/components/Tooltip';
+
 const Summary = () => (
   <div className="flex h-full w-full flex-col gap-2">
     <p className="text-2xl">
@@ -34,8 +36,9 @@ const Summary = () => (
       core features.
     </p>
     <p className="text-2xl">
-      - Worked in applications in education, social networks, and location-based
-      software.
+      - Worked in applications in <Tooltip id="education">education</Tooltip>,{' '}
+      <Tooltip id="social networks">social networks</Tooltip> and{' '}
+      <Tooltip id="location-based software">location-based software</Tooltip>.
     </p>
   </div>
 );
