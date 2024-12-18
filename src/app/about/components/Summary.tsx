@@ -36,8 +36,11 @@ const Summary = () => (
       core features.
     </p>
     <p className="text-2xl">
-      - Worked in applications in <Tooltip id="education">education</Tooltip>,{' '}
-      <Tooltip id="social networks">social networks</Tooltip> and{' '}
+      - Worked in applications in{' '}
+      <Tooltip className="-left-12" id="education">
+        education
+      </Tooltip>
+      , <Tooltip id="social networks">social networks</Tooltip> and{' '}
       <Tooltip id="location-based software">location-based software</Tooltip>.
     </p>
   </div>
