@@ -3,9 +3,9 @@ import StyledComponentsImage from '../../../assets/images/styled-comp.svg';
 
 const Stack = () => {
   return (
-    <div className="max-h-[215px] overflow-y-auto">
-      <h1 className="mb-4 text-2xl font-bold">Stack</h1>
-      <div className="flex flex-col gap-4">
+    <div className="overflow-y-auto md:h-[215px]">
+      <h1 className="mb-4 text-fluid-2xl font-bold">Stack</h1>
+      <div className="flex flex-col flex-wrap gap-4">
         {tools.map((toolsGroup) => (
           <div key={toolsGroup.category} className="flex flex-col">
             <h3 className="mb-2">{toolsGroup.category}</h3>

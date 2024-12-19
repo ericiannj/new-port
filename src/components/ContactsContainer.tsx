@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 const ContactsContainer = () => {
   return (
     <motion.div
-      className="absolute bottom-0 left-16"
+      className="left-16 md:absolute md:bottom-0"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex flex-col items-center justify-end space-y-4">
+      <div className="mb-4 flex justify-center space-x-4 md:mb-0 md:flex-col md:items-center md:justify-end md:space-x-0 md:space-y-4">
         <ContactIcon
           href="mailto:ian.developmentbr@gmail.com"
           icon={<Icons.mail />}
@@ -26,7 +26,7 @@ const ContactsContainer = () => {
           icon={<Icons.github />}
           label="GitHub Profile"
         />
-        <div className="h-24 w-0.5 space-y-4 bg-slate-200" />
+        <div className="hidden h-24 w-0.5 space-y-4 bg-slate-200 md:flex" />
       </div>
     </motion.div>
   );

@@ -62,8 +62,8 @@ export default function About() {
     <div className="flex min-h-screen flex-col items-center">
       <AnimatedSentences />
       <div className="flex w-full flex-grow items-center justify-center">
-        <div className="m-8 flex min-h-[400px] w-[80%] items-center space-x-8 rounded-md border-2 border-slate-200 p-4">
-          <div className="flex flex-col items-center gap-16">
+        <div className="m-8 flex min-h-[400px] w-[80%] flex-col items-center rounded-md border-2 border-slate-200 p-4 md:flex-row md:space-x-8">
+          <div className="mb-8 flex flex-col items-center gap-4 md:gap-16">
             <div className="h-64 min-w-64 overflow-hidden rounded-full">
               <Image
                 alt="profile image"
@@ -91,8 +91,8 @@ export default function About() {
               </motion.a>
             </div>
           </div>
-          <div className="w-full">
-            <h1 className="mb-4 text-4xl">Eric Junqueira</h1>
+          <div className="mx-auto w-full">
+            <h1 className="mb-4 text-fluid-4xl">Eric Junqueira</h1>
             <div className="flex flex-col gap-8 text-justify">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div

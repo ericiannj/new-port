@@ -14,7 +14,7 @@ const Recommendations = () => {
   const CurrentComponent = comments[selectedIndex].component;
 
   return (
-    <div className="flex h-[215px] w-full flex-col gap-2">
+    <div className="flex w-full flex-col gap-2 md:h-[215px]">
       <div className="flex flex-col items-center">
         <CurrentComponent />
         <div className="flex gap-4">
@@ -49,16 +49,17 @@ const Recommendations = () => {
 
 export default Recommendations;
 
+// h-[215px]
 const Recommendation1 = () => (
-  <div className="flex h-[215px] w-full flex-col gap-2">
-    <p className="text-base">
+  <div className="flex w-full flex-col gap-2">
+    <p className="text-fluid-base">
       &quot;I had the great opportunity to work with Eric at Grupo Portfolio,
       and it was incredible to see his progress in software development
       projects. In terms of both technical skills and behavior, Eric has always
       been a committed and studious professional who always strives for high
       quality in everything he does (in all his deliveries).
     </p>
-    <p className="text-base">
+    <p className="text-fluid-base">
       At the time, a notable case was a complex project we carried out, which
       aimed to build a new architecture and restructure an application to enable
       the implementation of new methods, services, libraries, and components
@@ -66,42 +67,42 @@ const Recommendation1 = () => (
       of the project, which he was able to apply and develop in Front-end,
       Back-end, and DevOps concepts.&quot;
     </p>
-    <p className="text-base">Thiago S.</p>
+    <p className="text-fluid-base">Thiago S.</p>
   </div>
 );
 
 const Recommendation2 = () => (
-  <div className="flex h-[215px] w-full flex-col gap-2">
-    <p className="text-base">
+  <div className="flex w-full flex-col gap-2">
+    <p className="text-fluid-base">
       &quot;Eric was a developer on my squad at Big Brain and from the beginning
       he demonstrated excellent communication, concern for the product and the
       quality of his work.
     </p>
-    <p className="text-base">
+    <p className="text-fluid-base">
       Eric was a developer on my squad at Big Brain and from the beginning he
       demonstrated excellent communication, concern for the product and the
       quality of his work.&quot;
     </p>
-    <p className="text-base">Heloísa G.</p>
+    <p className="text-fluid-base">Heloísa G.</p>
   </div>
 );
 
 const Recommendation3 = () => (
-  <div className="flex h-[215px] w-full flex-col gap-2">
-    <p className="text-base">
+  <div className="flex w-full flex-col gap-2">
+    <p className="text-fluid-base">
       &quot;Eric was one of my first colleagues when I started working in
       software development. What caught my attention the most about his way of
       working and planning was his search for the best technologies and
       methodologies on the market and his focus on creating scalable
       applications that could always evolve.
     </p>
-    <p className="text-base">
+    <p className="text-fluid-base">
       During the time I worked with him, I learned a lot and we evolved as
       professionals, pushing each other to achieve excellence in projects. He is
       a highly skilled professional. Few people have the courage to create an
       application from scratch at the beginning of their career, but he accepted
       this challenge together with our team without hesitation.&quot;
     </p>
-    <p className="text-base">Gabriel A.</p>
+    <p className="text-fluid-base">Gabriel A.</p>
   </div>
 );

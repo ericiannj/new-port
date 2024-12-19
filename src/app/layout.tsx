@@ -26,9 +26,9 @@ export default function RootLayout({
         <div>
           <TransitionWrapper>
             <>
+              <Navbar />
               {children}
               <ContactsContainer />
-              <Navbar />
             </>
           </TransitionWrapper>
         </div>

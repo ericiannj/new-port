@@ -8,7 +8,7 @@ const sentenceVariants = {
 
 const AnimatedSentences = () => {
   return (
-    <div className="m-4 flex justify-center gap-4">
+    <div className="m-4 hidden justify-center gap-4 md:flex">
       {sentences.map((sentence, index) => (
         <motion.div
           key={index}

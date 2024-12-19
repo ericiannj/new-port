@@ -108,7 +108,7 @@ const Tooltip = ({ children, id, className }: TooltipProps) => {
             >
               <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
               <div className="absolute -bottom-px z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
-              <div className="relative z-30 text-base font-bold text-white">
+              <div className="relative z-30 text-fluid-base font-bold text-white">
                 {selectedPosition.name}
               </div>
               <div className="text-xs text-white">
