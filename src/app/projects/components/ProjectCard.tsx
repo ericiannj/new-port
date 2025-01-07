@@ -6,6 +6,7 @@ import Image, { StaticImageData } from 'next/image';
 interface AnimatedProjectCardProps {
   title: string;
   image: StaticImageData;
+  link: string;
 }
 
 const containerVariants = {
@@ -43,6 +44,7 @@ const titleVariants = {
 export default function AnimatedProjectCard({
   title,
   image,
+  link,
 }: AnimatedProjectCardProps) {
   return (
     <motion.div
@@ -52,14 +54,13 @@ export default function AnimatedProjectCard({
       whileHover="hover"
       variants={containerVariants}
       transition={{ duration: 0.5 }}
+      onClick={() => window.open(link, '_blank', 'noopener,noreferrer')}
     >
       <Image
         src={image}
         alt={title}
         className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
       />
-
-      {/* Dark overlay with project name */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center"
         variants={overlayVariants}

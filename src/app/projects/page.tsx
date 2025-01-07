@@ -1,8 +1,4 @@
-import AnimatedProjectCard from './components/ProjectCard';
-
-import StocksManagerImage from '../../assets/images/stocks-manager.png';
-import IndyImage from '../../assets/images/indy.png';
-import Web3VoteImage from '../../assets/images/web3vote.png';
+import ProjectsCarousel from './components/ProjectsCarousel';
 
 export default function Projects() {
   return (
@@ -15,25 +11,8 @@ export default function Projects() {
           </span>
           :
         </h1>
-        <div>
-          {projects.map((project) => (
-            <AnimatedProjectCard
-              key={project.title}
-              title={project.title}
-              image={project.image}
-            />
-          ))}
-        </div>
+        <ProjectsCarousel />
       </div>
     </div>
   );
 }
-
-const projects = [
-  {
-    title: 'Stocks Manager',
-    image: StocksManagerImage,
-  },
-  { title: 'Indy', image: IndyImage },
-  { title: 'Web3Vote', image: Web3VoteImage },
-];
