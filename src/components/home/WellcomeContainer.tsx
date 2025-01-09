@@ -10,7 +10,7 @@ const WellcomeContainer = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <p className="text-fluid-2xl mb-4">
+      <p className="mb-4 text-fluid-2xl">
         Hey there{''}
         <motion.span
           className="ml-2 mr-1 inline-block"
