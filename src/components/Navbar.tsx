@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <motion.div
-      className="flex justify-center md:absolute md:bottom-16 md:right-16"
+      className="flex justify-center md:fixed md:bottom-16 md:right-16 md:z-50"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

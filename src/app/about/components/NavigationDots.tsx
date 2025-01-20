@@ -14,7 +14,7 @@ export default function NavigationDots({
           key={sectionId}
           href={`#${sectionId}`}
           className={`block h-3 w-3 rounded-full border border-gray-400 transition-colors ${
-            activeSection === sectionId ? 'bg-gray-400' : 'bg-transparent'
+            activeSection === sectionId ? 'bg-blue-300' : 'bg-transparent'
           }`}
           aria-label={`Navigate to ${sectionId} section`}
         />
