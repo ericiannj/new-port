@@ -43,12 +43,12 @@ const positions: Position[] = [
   },
 ];
 
+const springConfig = { stiffness: 100, damping: 5 };
+
 const Tooltip = ({ children, id, className }: TooltipProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<PositionId | null>(null);
   console.log('hoveredIndex', hoveredIndex);
   const selectedPosition = positions.find((position) => position.id === id);
-
-  const springConfig = { stiffness: 100, damping: 5 };
 
   const x = useMotionValue(0); // going to set this value on mouse move
 
@@ -70,16 +70,14 @@ const Tooltip = ({ children, id, className }: TooltipProps) => {
     x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
   };
 
-  console.log('selectedPosition', selectedPosition);
-
   if (!selectedPosition) {
     return <>{children}</>;
   }
 
   return (
-    <span className="relative mr-4 inline-block">
+    <span className="relative inline-block">
       <div
-        className="group relative -mr-4"
+        className="group relative"
         key={selectedPosition.name}
         onMouseEnter={() => setHoveredIndex(selectedPosition.id)}
         onMouseLeave={() => setHoveredIndex(null)}
@@ -104,7 +102,7 @@ const Tooltip = ({ children, id, className }: TooltipProps) => {
                 rotate: rotate,
                 whiteSpace: 'nowrap',
               }}
-              className={`${className} absolute -top-16 z-50 flex flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-xs shadow-xl`}
+              className={`${className} absolute left-full top-0 z-50 ml-2 flex flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-xs shadow-xl`}
             >
               <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
               <div className="absolute -bottom-px z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
