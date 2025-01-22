@@ -10,8 +10,8 @@ enum SectionId {
   Summary = 'summary',
   Achievements = 'achievements',
   Stack = 'stack',
-  Perspectives = 'perspectives',
   Recommendations = 'recommendations',
+  Perspectives = 'perspectives',
 }
 
 export default function About() {
@@ -49,10 +49,10 @@ export default function About() {
         return <Achievements />;
       case SectionId.Stack:
         return <Stack />;
-      case SectionId.Perspectives:
-        return <Perspectives />;
       case SectionId.Recommendations:
         return <Recommendations />;
+      case SectionId.Perspectives:
+        return <Perspectives />;
       default:
         return <Summary />;
     }

@@ -14,6 +14,7 @@ const config: Config = {
       },
       fontSize: {
         'fluid-base': 'clamp(1rem, 2vw, 1rem)',
+        'fluid-xl': 'clamp(1.125rem, 2.25vw, 1.25rem)',
         'fluid-2xl': 'clamp(1.25rem, 2.5vw, 1.5rem)',
         'fluid-4xl': 'clamp(1.75rem, 3vw, 2.5rem)',
         'fluid-6xl': 'clamp(1.5rem, 5vw, 4rem)',
