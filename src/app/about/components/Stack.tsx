@@ -3,8 +3,8 @@ import StyledComponentsImage from '../../../assets/images/styled-comp.svg';
 
 const Stack = () => {
   return (
-    <div className="overflow-y-auto md:h-[215px]">
-      <h1 className="mb-4 text-fluid-2xl font-bold">Stack</h1>
+    <div className="overflow-y-auto">
+      <h1 className="mb-4 text-fluid-4xl font-bold">My Stack</h1>
       <div className="flex flex-col flex-wrap gap-4">
         {tools.map((toolsGroup) => (
           <div key={toolsGroup.category} className="flex flex-col">
@@ -13,8 +13,8 @@ const Stack = () => {
               {toolsGroup.tools.map((tool) => (
                 <div className="flex flex-col items-center" key={tool.name}>
                   <Image
-                    height={25}
-                    width={25}
+                    height={40}
+                    width={40}
                     alt={tool.name}
                     src={tool.icon}
                   />

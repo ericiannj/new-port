@@ -9,9 +9,9 @@ import Achievements from './components/Achievements';
 enum SectionId {
   Summary = 'summary',
   Achievements = 'achievements',
+  Stack = 'stack',
   Perspectives = 'perspectives',
   Recommendations = 'recommendations',
-  Stack = 'stack',
 }
 
 export default function About() {
@@ -45,16 +45,16 @@ export default function About() {
 
   const renderSection = (id: SectionId) => {
     switch (id) {
-      case SectionId.Summary:
-        return <Summary />;
       case SectionId.Achievements:
         return <Achievements />;
+      case SectionId.Stack:
+        return <Stack />;
       case SectionId.Perspectives:
         return <Perspectives />;
       case SectionId.Recommendations:
         return <Recommendations />;
-      case SectionId.Stack:
-        return <Stack />;
+      default:
+        return <Summary />;
     }
   };
 
