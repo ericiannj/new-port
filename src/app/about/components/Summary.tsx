@@ -1,9 +1,15 @@
 import DomainsSection from './DomainsSection';
 
 import CustomProfileImage from './CustomProfileImage';
+import { motion } from 'framer-motion';
 
 const Summary = () => (
-  <div className="flex flex-col text-fluid-2xl">
+  <motion.div
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="flex flex-col text-fluid-2xl"
+  >
     <div className="mb-8 flex justify-center">
       <CustomProfileImage />
     </div>
@@ -24,7 +30,7 @@ const Summary = () => (
       domains:
     </p>
     <DomainsSection />
-  </div>
+  </motion.div>
 );
 
 export default Summary;
