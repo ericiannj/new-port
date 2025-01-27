@@ -6,52 +6,71 @@ import NavigationDots from './components/NavigationDots';
 import AboutSection from './components/AboutSection';
 import Achievements from './components/Achievements';
 
-enum SectionId {
-  Summary = 'summary',
-  Achievements = 'achievements',
-  Stack = 'stack',
-  Recommendations = 'recommendations',
-  Perspectives = 'perspectives',
-}
+const sections = [
+  {
+    id: 'summary',
+    bgColor: '#0a0a0a',
+  },
+  {
+    id: 'achievements',
+    bgColor: 'bg-slate-700',
+  },
+  {
+    id: 'stack',
+    bgColor: 'bg-slate-600',
+  },
+  {
+    id: 'recommendations',
+    bgColor: 'bg-slate-700',
+  },
+  {
+    id: 'perspectives',
+    bgColor: '#0a0a0a',
+  },
+] as const;
+
+type Section = (typeof sections)[number];
 
 export default function About() {
-  const [activeSection, setActiveSection] = useState<SectionId>(
-    SectionId.Summary,
-  );
-
-  const sections = Object.values(SectionId);
+  const [activeSection, setActiveSection] = useState<Section['id']>('summary');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id as SectionId);
-          }
+        // Find the entry with the largest intersection ratio
+        const mostVisible = entries.reduce((prev, current) => {
+          return (prev?.intersectionRatio ?? 0) > current.intersectionRatio
+            ? prev
+            : current;
         });
+
+        if (mostVisible && mostVisible.isIntersecting) {
+          setActiveSection(mostVisible.target.id as Section['id']);
+        }
       },
       {
-        threshold: 0.5,
+        threshold: [0, 0.25, 0.5, 0.75, 1], // Multiple thresholds for smoother detection
+        rootMargin: '-45% 0px -45% 0px', // Adjust the detection area to be center-focused
       },
     );
 
-    sections.forEach((sectionId) => {
-      const element = document.getElementById(sectionId);
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
       if (element) observer.observe(element);
     });
 
     return () => observer.disconnect();
-  }, [sections]);
+  }, []);
 
-  const renderSection = (id: SectionId) => {
+  const renderSection = (id: Section['id']) => {
     switch (id) {
-      case SectionId.Achievements:
+      case 'achievements':
         return <Achievements />;
-      case SectionId.Stack:
+      case 'stack':
         return <Stack />;
-      case SectionId.Recommendations:
+      case 'recommendations':
         return <Recommendations />;
-      case SectionId.Perspectives:
+      case 'perspectives':
         return <Perspectives />;
       default:
         return <Summary />;
@@ -60,11 +79,15 @@ export default function About() {
 
   return (
     <div className="flex min-h-screen flex-col items-center">
-      <div className="relative">
+      <div className="relative w-full">
         <NavigationDots sections={sections} activeSection={activeSection} />
-        {sections.map((sectionId) => (
-          <AboutSection key={sectionId} id={sectionId} bgColor="transparent">
-            {renderSection(sectionId)}
+        {sections.map((section) => (
+          <AboutSection
+            key={section.id}
+            id={section.id}
+            bgColor={section.bgColor}
+          >
+            {renderSection(section.id)}
           </AboutSection>
         ))}
       </div>
