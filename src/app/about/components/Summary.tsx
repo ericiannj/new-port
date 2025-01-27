@@ -1,18 +1,11 @@
-import Image from 'next/image';
 import DomainsSection from './DomainsSection';
 
-import ProfileImage from '../../../assets/images/profile.jpeg';
+import CustomProfileImage from './CustomProfileImage';
 
 const Summary = () => (
   <div className="flex flex-col text-fluid-2xl">
     <div className="mb-8 flex justify-center">
-      <Image
-        src={ProfileImage}
-        alt="Profile Image"
-        height={90}
-        width={90}
-        className="rounded-full object-cover"
-      />
+      <CustomProfileImage />
     </div>
     <p className="mb-2 indent-8">
       I&apos;m a Full Stack Developer with strong{' '}
