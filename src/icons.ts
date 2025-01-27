@@ -9,6 +9,7 @@ import {
   Mail,
   ArrowRight,
   ArrowLeft,
+  FileText,
 } from 'lucide-react';
 import GlobeIcon from './assets/icons/GlobeIcon';
 
@@ -24,4 +25,5 @@ export const Icons = {
   mail: Mail,
   arrowRight: ArrowRight,
   arrowLeft: ArrowLeft,
+  resume: FileText,
 };

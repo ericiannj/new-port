@@ -12,6 +12,11 @@ const ContactsContainer = () => {
     >
       <div className="mb-4 flex justify-center space-x-4 md:mb-0 md:flex-col md:items-center md:justify-end md:space-x-0 md:space-y-4">
         <ContactIcon
+          href="/resume.pdf"
+          icon={<Icons.resume />}
+          label="My resume"
+        />
+        <ContactIcon
           href="mailto:ian.developmentbr@gmail.com"
           icon={<Icons.mail />}
           label="Send Email"
