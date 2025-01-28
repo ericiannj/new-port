@@ -1,10 +1,15 @@
 'use client';
 
-import { Perspectives, Recommendations, Stack, Summary } from './components';
+import {
+  Perspectives,
+  Recommendations,
+  Stack,
+  Summary,
+  AboutSection,
+  Achievements,
+  NavigationDots,
+} from './components';
 import { useEffect, useState } from 'react';
-import NavigationDots from './components/NavigationDots';
-import AboutSection from './components/AboutSection';
-import Achievements from './components/Achievements';
 
 const sections = [
   {

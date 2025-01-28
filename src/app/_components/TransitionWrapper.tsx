@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import HomeTransition from '@/components/HomeTransition';
+import HomeTransition from './HomeTransition';
 
 export default function TransitionWrapper({
   children,

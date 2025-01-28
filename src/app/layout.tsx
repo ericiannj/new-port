@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import TransitionWrapper from '../components/TransitionWrapper';
-import ContactsContainer from '@/components/ContactsContainer';
+import Navbar from './_components/Navbar';
+import TransitionWrapper from './_components/TransitionWrapper';
+import ContactsContainer from './_components/ContactsContainer';
 import { Rubik } from 'next/font/google';
 
 export const metadata: Metadata = {

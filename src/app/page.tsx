@@ -1,4 +1,4 @@
-import WellcomeContainer from '@/components/home/WellcomeContainer';
+import WellcomeContainer from './_components/WellcomeContainer';
 
 export default function Home() {
   return (
