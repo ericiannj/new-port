@@ -11,7 +11,7 @@ const Achievements = () => (
           alt="Coffee animation"
           width={32}
           height={32}
-          className="rounded-full"
+          className="rounded-full bg-white p-1"
         />
         <p>
           Work for an American company for over two years in a product that
@@ -28,7 +28,7 @@ const Achievements = () => (
           alt="Coffee animation"
           width={32}
           height={32}
-          className="rounded-full"
+          className="rounded-full bg-white p-1"
         />
         <p>
           Creating scalable solutions, I&apos;ve built{' '}
@@ -46,7 +46,7 @@ const Achievements = () => (
           alt="Coffee animation"
           width={32}
           height={32}
-          className="rounded-full"
+          className="rounded-full bg-white p-1"
         />
         <p>
           Working with a multicultural team in a remote and asynchronous

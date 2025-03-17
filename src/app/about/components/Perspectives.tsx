@@ -11,7 +11,7 @@ const Perspectives = () => (
           width={32}
           height={32}
           src={TargetGif}
-          className="rounded-full"
+          className="rounded-full bg-white p-1"
         />
         <p>
           Currently, I&apos;m primarily focused on front-end development, with
@@ -24,7 +24,7 @@ const Perspectives = () => (
           width={32}
           height={32}
           src={TargetGif}
-          className="rounded-full"
+          className="rounded-full bg-white p-1"
         />
         <p>
           Alongside this, I&apos;m enhancing my back-end skills, especially with
@@ -38,7 +38,7 @@ const Perspectives = () => (
           width={32}
           height={32}
           src={TargetGif}
-          className="rounded-full"
+          className="rounded-full bg-white p-1"
         />
         <p>
           This helps me stay versatile and meet the changing needs of the tech
@@ -58,7 +58,7 @@ const Perspectives = () => (
           width={32}
           height={32}
           src={ResumeGif}
-          className="rounded-full"
+          className="rounded-full bg-white p-1"
         />
         <span className="text-lg font-medium">My Resume</span>
       </a>
