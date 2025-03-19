@@ -49,22 +49,22 @@ const DomainsSection = () => {
 
   return (
     <div className="w-full">
-      <ul className="space-y-2">
+      <ul>
         {positions.map((item) => (
           <li
             key={item.id}
             id={item.id}
             onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={handleMouseLeave}
-            className={`flex cursor-pointer items-center justify-between rounded-lg p-4 transition-all duration-200 ${
+            className={`flex cursor-pointer items-center justify-between rounded-lg p-2 transition-all duration-200 ${
               selectedPositionId === item.id ? 'bg-blue-300' : ''
             }`}
             onClick={(event) => handleClick(event, item.url)}
           >
             <span
-              className={`${selectedPositionId === item.id ? 'text-gray-900' : 'text-gray-50'}`}
+              className={`text-2xl ${selectedPositionId === item.id ? 'text-gray-900' : 'text-gray-50'}`}
             >
-              {item.label}
+              • {item.label}
             </span>
             <div
               className={`transition-opacity duration-200 ${
@@ -72,13 +72,15 @@ const DomainsSection = () => {
               }`}
             >
               <div className="flex items-center gap-2">
-                <div className="flex items-center text-gray-500">
-                  <MapPin size={16} />
-                  <span className="ml-1 text-sm">{item.country}</span>
+                <div className="flex items-center text-gray-900">
+                  <MapPin size={14} />
+                  <span className="ml-1 text-xs">{item.country}</span>
                 </div>
                 <div className="text-right">
-                  <p className="font-medium text-gray-900">{item.name}</p>
-                  <p className="text-sm text-gray-600">{item.designation}</p>
+                  <p className="text-sm font-medium text-gray-900">
+                    {item.name}
+                  </p>
+                  <p className="text-xs text-gray-600">{item.designation}</p>
                 </div>
               </div>
             </div>

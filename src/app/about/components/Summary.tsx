@@ -20,7 +20,7 @@ const Summary = () => (
       </span>
       .
     </p>
-    <p className="mb-4 indent-8">
+    <p className="indent-8">
       For over{' '}
       <span className="relative">
         <span className="relative z-10">4+</span>
