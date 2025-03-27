@@ -1,6 +1,13 @@
 'use client';
 import { Icons } from '@/icons';
-import { motion } from 'framer-motion';
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from 'framer-motion';
+import { useState } from 'react';
 
 const ContactsContainer = () => {
   return (
@@ -45,10 +52,68 @@ type ContactIconProps = {
   label: string;
 };
 
-const ContactIcon = ({ href, icon, label }: ContactIconProps) => (
-  <div className="cursor-pointer">
-    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
-      {icon}
-    </a>
-  </div>
-);
+const ContactIcon = ({ href, icon, label }: ContactIconProps) => {
+  const [showToolTip, setShowToolTip] = useState(false);
+
+  const springConfig = { stiffness: 100, damping: 5 };
+  const x = useMotionValue(0);
+
+  const rotate = useSpring(
+    useTransform(x, [-100, 100], [-45, 45]),
+    springConfig,
+  );
+
+  const translateX = useSpring(
+    useTransform(x, [-100, 100], [-75, 75]),
+    springConfig,
+  );
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+    const halfWidth = event.currentTarget.offsetWidth / 2;
+    x.set(event.nativeEvent.offsetX - halfWidth);
+  };
+
+  return (
+    <div
+      className="cursor-pointer"
+      onMouseEnter={() => setShowToolTip(true)}
+      onMouseLeave={() => setShowToolTip(false)}
+    >
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={label}
+        onMouseMove={handleMouseMove}
+      >
+        {icon}
+      </a>
+      <AnimatePresence mode="wait">
+        {!!showToolTip && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.6 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                type: 'spring',
+                stiffness: 260,
+                damping: 10,
+              },
+            }}
+            exit={{ opacity: 0, y: -20, scale: 0.6 }}
+            style={{
+              translateX: translateX,
+              rotate: rotate,
+              whiteSpace: 'nowrap',
+            }}
+            className="absolute left-8 z-50 rounded-lg bg-slate-900 px-2 py-1 text-xl shadow-xl"
+          >
+            {label}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
