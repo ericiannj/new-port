@@ -108,7 +108,7 @@ const ContactIcon = ({ href, icon, label }: ContactIconProps) => {
               rotate: rotate,
               whiteSpace: 'nowrap',
             }}
-            className="absolute left-8 z-50 rounded-lg bg-slate-900 px-2 py-1 text-xl shadow-xl"
+            className="text-md absolute left-8 z-50 rounded-lg bg-slate-900 px-2 py-1 shadow-xl"
           >
             {label}
           </motion.div>
