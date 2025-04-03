@@ -20,7 +20,7 @@ export default function HomeTransition({ onEnd }: HomeTransitionProps) {
   }, [index, onEnd]);
 
   return (
-    <div className="z-10 flex h-screen w-full flex-row items-center justify-center bg-[#0a0a0a]">
+    <div className="z-10 flex h-screen w-full flex-row items-center justify-center bg-gradient-to-b from-[#0a0a0a] to-[#0f172a]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

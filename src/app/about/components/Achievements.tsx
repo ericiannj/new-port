@@ -35,9 +35,9 @@ const Achievements = () => (
           <span className="font-bold text-blue-300">
             100+ reusable components
           </span>
-          , <span className="font-bold text-blue-300">50+, test suites</span>,
-          and <span className="font-bold text-blue-300">20+ core features</span>
-          .
+          , <span className="font-bold text-blue-300">80+ test suites</span>,
+          <span className="font-bold text-blue-300"> 30+ API modules</span> and{' '}
+          <span className="font-bold text-blue-300">20+ core features</span>.
         </p>
       </li>
       <li className="flex items-center gap-4">

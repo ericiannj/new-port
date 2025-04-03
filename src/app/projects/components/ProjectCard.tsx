@@ -48,7 +48,7 @@ export default function AnimatedProjectCard({
 }: AnimatedProjectCardProps) {
   return (
     <motion.div
-      className="relative w-[400px] cursor-pointer overflow-hidden rounded-lg"
+      className="relative h-[220px] w-[400px] cursor-pointer overflow-hidden rounded-lg"
       initial="initial"
       animate="animate"
       whileHover="hover"
@@ -60,6 +60,7 @@ export default function AnimatedProjectCard({
         src={image}
         alt={title}
         className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+        fill
       />
       <motion.div
         className="absolute inset-0 flex items-center justify-center"

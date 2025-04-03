@@ -14,7 +14,7 @@ const Perspectives = () => (
           className="rounded-full bg-white p-1"
         />
         <p>
-          Currently, I&apos;m primarily focused on front-end development, with
+          Currently, I&apos;m primarily focused on front-end engineering, with
           over 70% of my work in this area.
         </p>
       </div>
@@ -28,8 +28,8 @@ const Perspectives = () => (
         />
         <p>
           Alongside this, I&apos;m enhancing my back-end skills, especially with
-          JavaScript technologies like Next.js and Express, and exploring the Go
-          programming language.
+          JavaScript technologies like NestJS and Express.js, and exploring the
+          Go programming language.
         </p>
       </div>
       <div className="flex items-center gap-4">
