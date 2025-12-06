@@ -3,12 +3,12 @@ import { MapPin } from 'lucide-react';
 
 const positions = [
   {
-    id: 'social-networks',
-    label: 'Social Network',
-    name: 'Grupo Portfolio',
-    designation: 'Software Development Internship',
-    country: 'Brazil',
-    url: 'https://grupoportfolio.com.br/portfolio-tech/pinmais/',
+    id: 'location-based-software',
+    label: 'Location-Based Software',
+    name: 'Beakyn',
+    designation: 'Full Stack Developer',
+    country: 'USA',
+    url: 'https://beakyn.com/',
   },
   {
     id: 'education',
@@ -19,12 +19,12 @@ const positions = [
     url: 'https://bigbrain.com.br/educacao-publica-secretarias-de-educacao-e-universidades/sala-de-aula-conectada/',
   },
   {
-    id: 'location-based-software',
-    label: 'Location-Based Software',
-    name: 'Beakyn',
-    designation: 'Full Stack Developer',
-    country: 'USA',
-    url: 'https://beakyn.com/',
+    id: 'social-networks',
+    label: 'Social Network',
+    name: 'Grupo Portfolio',
+    designation: 'Software Development Internship',
+    country: 'Brazil',
+    url: 'https://grupoportfolio.com.br/',
   },
 ];
 

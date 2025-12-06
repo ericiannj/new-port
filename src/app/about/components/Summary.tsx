@@ -23,7 +23,7 @@ const Summary = () => (
     <p className="indent-8">
       For over{' '}
       <span className="relative">
-        <span className="relative z-10">4+</span>
+        <span className="relative z-10">5</span>
         <span className="absolute bottom-[-4px] left-0 right-0 h-1 bg-gradient-to-r from-yellow-500 via-purple-500 to-blue-500" />
       </span>{' '}
       years of work experience, I had the opportunity in projects of the
