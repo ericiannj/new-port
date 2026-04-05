@@ -50,6 +50,7 @@ const ProjectsCarousel = () => {
               title={project.title}
               image={project.image}
               link={project.link}
+              priority={index === 1}
             />
           </motion.div>
         ))}
