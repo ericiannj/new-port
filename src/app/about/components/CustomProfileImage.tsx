@@ -43,6 +43,9 @@ const CustomProfileImage = () => {
           onMouseMove={handleMouseMove}
           src={ProfileImage}
           alt="Profile Image"
+          priority
+          quality={100}
+          sizes="112px"
           className="relative m-0! h-28 w-28 rounded-full object-cover object-top p-0! transition duration-500 group-hover:z-30 group-hover:scale-105"
         />
         <AnimatePresence mode="wait">
