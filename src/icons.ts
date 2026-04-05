@@ -4,14 +4,14 @@ import {
   UserRound,
   BookOpen,
   Code,
-  Github,
-  Linkedin,
   Mail,
   ArrowRight,
   ArrowLeft,
   FileText,
 } from 'lucide-react';
 import GlobeIcon from './assets/icons/GlobeIcon';
+import GithubIcon from './assets/icons/GithubIcon';
+import LinkedinIcon from './assets/icons/LinkedinIcon';
 
 export const Icons = {
   close: X,
@@ -20,8 +20,8 @@ export const Icons = {
   projects: Code,
   contact: BookOpen,
   globe: GlobeIcon,
-  github: Github,
-  linkedin: Linkedin,
+  github: GithubIcon,
+  linkedin: LinkedinIcon,
   mail: Mail,
   arrowRight: ArrowRight,
   arrowLeft: ArrowLeft,

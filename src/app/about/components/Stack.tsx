@@ -11,11 +11,11 @@ const Stack = () => {
         x: {
           repeat: Infinity,
           duration: 1.5,
-          ease: 'easeInOut',
+          ease: 'easeInOut' as const,
         },
         scale: {
           duration: 0.2,
-          ease: 'easeOut',
+          ease: 'easeOut' as const,
         },
       },
     },
