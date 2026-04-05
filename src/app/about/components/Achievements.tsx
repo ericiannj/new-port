@@ -2,7 +2,7 @@ import Image from 'next/image';
 import CoffeGif from '../../../assets/gifs/coffe.gif';
 
 const Achievements = () => (
-  <div className="flex w-full flex-col gap-8 text-fluid-2xl">
+  <div className="text-fluid-2xl flex w-full flex-col gap-8">
     <p>During this years, I&apos;m proud of:</p>
     <ul className="space-y-8">
       <li className="flex items-center gap-4">

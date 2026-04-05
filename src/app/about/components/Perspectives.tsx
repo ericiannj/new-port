@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Perspectives = () => (
   <div className="flex w-full flex-col gap-8">
-    <div className="flex flex-col space-y-6 text-fluid-2xl">
+    <div className="text-fluid-2xl flex flex-col space-y-6">
       <div className="flex items-center gap-4">
         <Image
           alt="target animation"

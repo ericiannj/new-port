@@ -10,13 +10,13 @@ export default function Navbar() {
 
   return (
     <motion.div
-      className="flex justify-center md:fixed md:bottom-16 md:right-16 md:z-50"
+      className="flex justify-center md:fixed md:right-16 md:bottom-16 md:z-50"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <nav>
-        <ul className="flex space-x-8 p-4 md:flex-col md:items-start md:space-x-0 md:space-y-8">
+        <ul className="flex space-x-8 p-4 md:flex-col md:items-start md:space-y-8 md:space-x-0">
           <AnimatePresence key={pathName}>
             {pages.map((page) => (
               <motion.li

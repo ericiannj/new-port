@@ -10,10 +10,10 @@ const WellcomeContainer = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <p className="mb-4 text-fluid-2xl">
+      <p className="text-fluid-2xl mb-4">
         Hey there{''}
         <motion.span
-          className="ml-2 mr-1 inline-block"
+          className="mr-1 ml-2 inline-block"
           animate={{
             rotate: [0, 15, -15, 10, -10, 0],
             x: [0, 2, -2, 2, -2, 0],
@@ -31,11 +31,11 @@ const WellcomeContainer = () => {
       <h1 className="text-fluid-8xl">Eric Junqueira.</h1>
       <h1 className="text-fluid-6xl">
         I work with{' '}
-        <span className="bg-gradient-to-r from-yellow-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-yellow-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
           ideas
         </span>{' '}
         in the{' '}
-        <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 bg-clip-text text-transparent">
+        <span className="bg-linear-to-r from-blue-500 via-purple-500 to-red-500 bg-clip-text text-transparent">
           Web
         </span>
         .

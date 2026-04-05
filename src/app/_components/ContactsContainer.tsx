@@ -17,7 +17,7 @@ const ContactsContainer = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="mb-4 flex justify-center space-x-4 md:mb-0 md:flex-col md:items-center md:justify-end md:space-x-0 md:space-y-4">
+      <div className="mb-4 flex justify-center space-x-4 md:mb-0 md:flex-col md:items-center md:justify-end md:space-y-4 md:space-x-0">
         <ContactIcon
           href="/resume.pdf"
           icon={<Icons.resume />}

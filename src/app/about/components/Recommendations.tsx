@@ -29,7 +29,7 @@ const Recommendations = () => {
                 <h3 className="mb-4 text-center text-xl font-semibold text-white">
                   {testimonial.title}
                 </h3>
-                <p className="mb-6 flex-grow text-sm text-white">
+                <p className="mb-6 grow text-sm text-white">
                   {testimonial.content}
                 </p>
                 <motion.div

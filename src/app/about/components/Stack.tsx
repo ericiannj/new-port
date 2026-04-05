@@ -25,7 +25,7 @@ const Stack = () => {
     <div className="overflow-y-auto">
       <div className="flex justify-center">
         <motion.h1
-          className="mb-4 cursor-pointer text-fluid-4xl font-bold"
+          className="text-fluid-4xl mb-4 cursor-pointer font-bold"
           whileHover="hover"
           variants={headingVariants}
         >

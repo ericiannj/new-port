@@ -13,7 +13,7 @@ export default function NavigationDots({
   activeSection,
 }: NavigationDotsProps) {
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 space-y-4">
+    <div className="fixed top-1/2 right-8 -translate-y-1/2 space-y-4">
       {sections.map((section) => (
         <a
           key={section.id}
