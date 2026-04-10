@@ -1,5 +1,6 @@
 export { default as AboutSection } from './AboutSection';
 export { default as NavigationDots } from './NavigationDots';
+export { default as SectionTracker } from './SectionTracker';
 
 export { default as Summary } from './Summary';
 export { default as Achievements } from './Achievements';
