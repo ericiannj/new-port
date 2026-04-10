@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 interface Circle {
   id: number;
@@ -40,27 +39,19 @@ const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
       {circles.map((circle) => (
-        <motion.div
+        <div
           key={circle.id}
-          className="absolute rounded-full bg-white/5"
+          className="animate-float absolute rounded-full bg-white/5"
           style={{
             width: circle.width,
             height: circle.height,
             left: circle.left,
             top: circle.top,
-          }}
-          animate={{
-            x: [0, circle.xOffset, 0],
-            y: [0, circle.yOffset, 0],
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: circle.duration,
-            repeat: Infinity,
-            ease: 'linear',
-            delay: circle.delay,
-          }}
+            '--float-x': `${circle.xOffset}px`,
+            '--float-y': `${circle.yOffset}px`,
+            '--float-duration': `${circle.duration}s`,
+            '--float-delay': `${circle.delay}s`,
+          } as React.CSSProperties}
         />
       ))}
     </div>
