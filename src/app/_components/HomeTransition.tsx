@@ -1,5 +1,6 @@
+'use client';
+
 import { Icons } from '@/icons';
-import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 type HomeTransitionProps = {
@@ -21,23 +22,14 @@ export default function HomeTransition({ onEnd }: HomeTransitionProps) {
 
   return (
     <div className="z-10 flex h-screen w-full flex-row items-center justify-center bg-linear-to-b from-[#0a0a0a] to-[#0f172a]">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 2 }}
-        className="m-8 inline-block p-4 text-center text-3xl"
-      >
+      <div className="animate-fade-in m-8 inline-block p-4 text-center text-3xl">
         {languages[index]}
         <div className="relative mt-6 flex items-center justify-center">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 5, ease: 'linear' }}
-          >
+          <div className="animate-spin-slow">
             <Icons.globe size={64} />
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

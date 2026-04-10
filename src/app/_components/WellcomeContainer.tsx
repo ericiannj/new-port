@@ -1,31 +1,9 @@
-'use client';
-
-import { motion } from 'framer-motion';
-
 const WellcomeContainer = () => {
   return (
-    <motion.div
-      className="flex flex-col justify-center"
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="animate-fade-in-down flex flex-col justify-center">
       <p className="text-fluid-2xl mb-4">
         Hey there{''}
-        <motion.span
-          className="mr-1 ml-2 inline-block"
-          animate={{
-            rotate: [0, 15, -15, 10, -10, 0],
-            x: [0, 2, -2, 2, -2, 0],
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        >
-          👋🏾
-        </motion.span>{' '}
+        <span className="animate-wave mr-1 ml-2 inline-block">👋🏾</span>{' '}
         , my name is
       </p>
       <h1 className="text-fluid-8xl">Eric Junqueira.</h1>
@@ -40,7 +18,7 @@ const WellcomeContainer = () => {
         </span>
         .
       </h1>
-    </motion.div>
+    </div>
   );
 };
 
