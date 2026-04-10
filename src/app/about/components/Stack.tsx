@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { tools } from '@/assets/icons/Tools';

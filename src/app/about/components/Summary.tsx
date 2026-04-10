@@ -1,3 +1,5 @@
+'use client';
+
 import DomainsSection from './DomainsSection';
 
 import CustomProfileImage from './CustomProfileImage';
