@@ -10,8 +10,8 @@ import {
 
 const sections = [
   { id: 'summary', bgColor: '#0a0a0a', component: Summary },
-  { id: 'achievements', bgColor: 'bg-slate-700', component: Achievements },
-  { id: 'stack', bgColor: 'bg-slate-600', component: Stack },
+  { id: 'achievements', bgColor: 'bg-achievements', component: Achievements },
+  { id: 'stack', bgColor: 'bg-stack', component: Stack },
   { id: 'recommendations', bgColor: 'bg-slate-700', component: Recommendations },
   { id: 'perspectives', bgColor: '#0a0a0a', component: Perspectives },
 ] as const;
