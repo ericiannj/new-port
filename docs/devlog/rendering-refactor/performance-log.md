@@ -110,31 +110,38 @@ Progressive performance metrics tracking during refactor implementation.
 
 ## After Phase 3 (Component Composition)
 
-**Date:**
-**Commit:**
+**Date:** 2026-04-10
+**Commit:** a4e2a82
 
 ### Code Counts
 
 | Metric | Value | Delta vs Baseline |
 |---|---|---|
-| Client Components | | |
-| Framer Motion Imports | | |
+| Client Components | 13 | -1 (about/page → server; +1 SectionTracker, +1 LazyAnimatedBackground) |
+| Framer Motion Imports | 5 | -7 (Navbar migrated to CSS) |
 
 ### Lighthouse Scores (Mobile)
 
 | Metric | `/` | `/about` | `/projects` | Delta vs Baseline |
 |---|---|---|---|---|
-| Performance Score | | | | |
-| LCP | | | | |
-| FCP | | | | |
-| TBT | | | | |
-| CLS | | | | |
-| Speed Index | | | | |
-| SEO Score | | | | |
+| Performance Score | 74 | 73 | 74 | 0 / +5 / +3 |
+| LCP | 6.9s | 6.9s | 7.5s | -0.3s / -1.0s / +0.1s |
+| FCP | 0.8s | 0.9s | 0.8s | 0 / +0.1s / 0 |
+| TBT | 190ms | 160ms | 140ms | +30ms / -70ms / -70ms |
+| CLS | 0.006 | 0.006 | 0.006 | 0 / 0 / 0 |
+| Speed Index | 1.8s | 3.6s | 2.2s | -1.1s / -1.3s / -1.3s |
+| SEO Score | 100 | 100 | 100 | 0 / 0 / 0 |
 
 ### Notes
 
-> (notes on composition refactors, components moved to server, etc.)
+> About page became a server component (scroll-tracking extracted to SectionTracker).
+> Navbar migrated from FM to CSS (spin-once animation on route change).
+> AnimatedBackground lazy-loaded via next/dynamic (ssr: false) — deferred from initial bundle.
+> Projects page showed best improvement this phase (+3 perf, TBT 210ms→140ms).
+> Speed Index continues to improve across all pages (home now at 1.8s vs 2.9s baseline).
+> LCP on /about improved significantly (-1.0s from baseline) — likely due to server-rendered content
+> streaming earlier with fewer client boundaries.
+> Unused JS dropped slightly (353/352/349 KiB vs 360/357/356 in Ph.2).
 
 ---
 
@@ -182,11 +189,11 @@ Progressive performance metrics tracking during refactor implementation.
 
 | Metric | Baseline | Post-Ph.1 | Post-Ph.2 | Post-Ph.3 | Post-Ph.4/5 | Target |
 |---|---|---|---|---|---|---|
-| Client Components | 14 | 14 | 12 | | | ~5-6 |
-| FM Imports | 12 | 12 | 6 | | | ~4 |
-| Perf Score (/) | 74 | — | 74 | | | > 90 |
-| LCP (/) | 7.2s | — | 7.0s | | | < 2.5s |
-| FCP (/) | 0.8s | — | 0.8s | | | < 1.8s |
-| TBT (/) | 160ms | — | 180ms | | | < 200ms |
-| CLS (/) | 0.006 | — | 0.006 | | | < 0.1 |
-| Speed Index (/) | 2.9s | — | 2.1s | | | |
+| Client Components | 14 | 14 | 12 | 13 | | ~5-6 |
+| FM Imports | 12 | 12 | 6 | 5 | | ~4 |
+| Perf Score (/) | 74 | — | 74 | 74 | | > 90 |
+| LCP (/) | 7.2s | — | 7.0s | 6.9s | | < 2.5s |
+| FCP (/) | 0.8s | — | 0.8s | 0.8s | | < 1.8s |
+| TBT (/) | 160ms | — | 180ms | 190ms | | < 200ms |
+| CLS (/) | 0.006 | — | 0.006 | 0.006 | | < 0.1 |
+| Speed Index (/) | 2.9s | — | 2.1s | 1.8s | | |
