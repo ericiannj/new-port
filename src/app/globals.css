@@ -20,6 +20,7 @@
   --animate-wave: wave 1s ease-in-out infinite;
   --animate-spin-slow: spin-slow 5s linear infinite;
   --animate-float: float var(--float-duration) linear infinite;
+  --animate-spin-once: spin-slow 0.25s ease-out;
 
   @keyframes fade-in {
     from { opacity: 0; }
