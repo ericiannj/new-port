@@ -1,17 +1,8 @@
-'use client';
-
 import DomainsSection from './DomainsSection';
-
 import CustomProfileImage from './CustomProfileImage';
-import { motion } from 'framer-motion';
 
 const Summary = () => (
-  <motion.div
-    initial={{ opacity: 0, y: -50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    className="text-fluid-2xl flex flex-col"
-  >
+  <div className="text-fluid-2xl animate-fade-in-down flex flex-col">
     <div className="mb-8 flex justify-center">
       <CustomProfileImage />
     </div>
@@ -32,7 +23,7 @@ const Summary = () => (
       domains:
     </p>
     <DomainsSection />
-  </motion.div>
+  </div>
 );
 
 export default Summary;

@@ -1,7 +1,4 @@
-'use client';
-
 import { Icons } from '@/icons';
-import { motion } from 'framer-motion';
 
 const Recommendations = () => {
   return (
@@ -15,16 +12,12 @@ const Recommendations = () => {
       <div className="relative w-full max-w-6xl">
         <div className="grid grid-cols-1 gap-6 px-4 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="flex flex-col items-center">
-              <motion.div
-                className={`${testimonial.bgColor} relative mb-8 flex h-full flex-col rounded-lg p-6 shadow-lg`}
-                whileHover={{
-                  scale: 1.02,
-                  transition: { type: 'spring', stiffness: 300 },
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+            <div
+              key={testimonial.id}
+              className="animate-fade-in-up flex flex-col items-center"
+            >
+              <div
+                className={`${testimonial.bgColor} hover-card relative mb-8 flex h-full flex-col rounded-lg p-6 shadow-lg`}
               >
                 <h3 className="mb-4 text-center text-xl font-semibold text-white">
                   {testimonial.title}
@@ -32,13 +25,10 @@ const Recommendations = () => {
                 <p className="mb-6 grow text-sm text-white">
                   {testimonial.content}
                 </p>
-                <motion.div
+                <div
                   className={`${testimonial.bgColor} absolute -bottom-4 left-1/2 h-8 w-8 -translate-x-1/2 rotate-45 transform`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
                 />
-              </motion.div>
+              </div>
               <div className="flex flex-col items-center">
                 <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-300">
                   <Icons.about className="h-full w-full" />
