@@ -47,10 +47,10 @@ const AnimatedBackground = () => {
             height: circle.height,
             left: circle.left,
             top: circle.top,
+            animationDelay: `${circle.delay}s`,
             '--float-x': `${circle.xOffset}px`,
             '--float-y': `${circle.yOffset}px`,
             '--float-duration': `${circle.duration}s`,
-            '--float-delay': `${circle.delay}s`,
           } as React.CSSProperties}
         />
       ))}

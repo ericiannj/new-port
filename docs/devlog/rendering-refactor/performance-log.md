@@ -73,31 +73,38 @@ Progressive performance metrics tracking during refactor implementation.
 
 ## After Phase 2 (CSS Migration)
 
-**Date:**
-**Commit:**
+**Date:** 2026-04-10
+**Commit:** c483a32
 
 ### Code Counts
 
 | Metric | Value | Delta vs Baseline |
 |---|---|---|
-| Client Components | | |
-| Framer Motion Imports | | |
+| Client Components | 12 | -2 (WellcomeContainer, Stack, Summary, Recommendations → server; +1 ViewTrigger) |
+| Framer Motion Imports | 6 | -6 (removed from WellcomeContainer, HomeTransition, Stack, Summary, Recommendations, AnimatedBackground) |
 
 ### Lighthouse Scores (Mobile)
 
 | Metric | `/` | `/about` | `/projects` | Delta vs Baseline |
 |---|---|---|---|---|
-| Performance Score | | | | |
-| LCP | | | | |
-| FCP | | | | |
-| TBT | | | | |
-| CLS | | | | |
-| Speed Index | | | | |
-| SEO Score | | | | |
+| Performance Score | 74 | 73 | 71 | 0 / +5 / 0 |
+| LCP | 7.0s | 7.3s | 7.4s | -0.2s / -0.6s / 0 |
+| FCP | 0.8s | 0.8s | 0.8s | 0 / 0 / 0 |
+| TBT | 180ms | 160ms | 260ms | +20ms / -70ms / +50ms |
+| CLS | 0.006 | 0.006 | 0.006 | 0 / 0 / 0 |
+| Speed Index | 2.1s | 3.3s | 2.1s | -0.8s / -1.6s / -1.4s |
+| SEO Score | 100 | 100 | 100 | 0 / 0 / 0 |
 
 ### Notes
 
-> (notes on migrated components, CSS animations created, etc.)
+> Migrated 6 components from Framer Motion to CSS animations. 4 components became server components
+> (WellcomeContainer, Stack, Summary, Recommendations). Created ViewTrigger for scroll-triggered animations.
+> About page showed the biggest improvement (+5 perf, -70ms TBT, -1.6s SI) — expected since 3 of its
+> components were migrated. Speed Index improved significantly across all pages.
+> LCP remains high (~7s) across all routes — this is likely image/font related, not JS.
+> TBT variance on / and /projects is within Lighthouse margin of error.
+> FM still loaded on all routes because remaining 6 files (Navbar, ContactsContainer, Tooltip,
+> ProjectCard, ProjectsCarousel, CustomProfileImage) still import it.
 
 ---
 
@@ -175,11 +182,11 @@ Progressive performance metrics tracking during refactor implementation.
 
 | Metric | Baseline | Post-Ph.1 | Post-Ph.2 | Post-Ph.3 | Post-Ph.4/5 | Target |
 |---|---|---|---|---|---|---|
-| Client Components | 14 | 14 | | | | ~5-6 |
-| FM Imports | 12 | 12 | | | | ~4 |
-| Perf Score (/) | 74 | — | | | | > 90 |
-| LCP (/) | 7.2s | — | | | | < 2.5s |
-| FCP (/) | 0.8s | — | | | | < 1.8s |
-| TBT (/) | 160ms | — | | | | < 200ms |
-| CLS (/) | 0.006 | — | | | | < 0.1 |
-| Speed Index (/) | 2.9s | — | | | | |
+| Client Components | 14 | 14 | 12 | | | ~5-6 |
+| FM Imports | 12 | 12 | 6 | | | ~4 |
+| Perf Score (/) | 74 | — | 74 | | | > 90 |
+| LCP (/) | 7.2s | — | 7.0s | | | < 2.5s |
+| FCP (/) | 0.8s | — | 0.8s | | | < 1.8s |
+| TBT (/) | 160ms | — | 180ms | | | < 200ms |
+| CLS (/) | 0.006 | — | 0.006 | | | < 0.1 |
+| Speed Index (/) | 2.9s | — | 2.1s | | | |
