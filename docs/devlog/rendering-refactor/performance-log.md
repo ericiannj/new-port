@@ -2,6 +2,9 @@
 
 Progressive performance metrics tracking during refactor implementation.
 
+> **All Lighthouse scores measured on Mobile** (Emulated Moto G Power, Slow 4G throttling, Chromium 146, Lighthouse 13.0.2).
+> Incognito window used to avoid cache/IndexedDB interference.
+
 ---
 
 ## Baseline (Pre-Refactor)
@@ -14,7 +17,7 @@ Progressive performance metrics tracking during refactor implementation.
 
 | Metric | Value |
 |---|---|
-| Client Components (`'use client'`) | 11 |
+| Client Components (`'use client'`) | 11 (14 actual — 3 missing directives) |
 | Framer Motion Imports | 12 |
 | `next/dynamic` usage | 0 |
 | `three` dependency | present (unused) |
@@ -31,38 +34,40 @@ Progressive performance metrics tracking during refactor implementation.
 | `/contact` | Static |
 | `/projects` | Static |
 
-### Lighthouse Scores
+### Lighthouse Scores (Mobile)
 
-> Fill in with Lighthouse scores before starting Phase 2.
-
-| Metric | `/` | `/about` | `/projects` | `/contact` |
-|---|---|---|---|---|
-| Performance Score | | | | |
-| LCP | | | | |
-| FCP | | | | |
-| TBT | | | | |
-| CLS | | | | |
-| INP | | | | |
-| SEO Score | | | | |
+| Metric | `/` | `/about` | `/projects` |
+|---|---|---|---|
+| Performance Score | 74 | 68 | 71 |
+| LCP | 7.2s | 7.9s | 7.4s |
+| FCP | 0.8s | 0.8s | 0.8s |
+| TBT | 160ms | 230ms | 210ms |
+| CLS | 0.006 | 0.006 | 0.006 |
+| Speed Index | 2.9s | 4.9s | 3.5s |
+| SEO Score | 100 | 100 | 100 |
 
 ---
 
 ## After Phase 1 (Bug Fixes and Cleanup)
 
-**Date:**
-**Commit:**
+**Date:** 2026-04-10
+**Commit:** d438d7a
 
 ### Code Counts
 
 | Metric | Value | Delta vs Baseline |
 |---|---|---|
-| Client Components | | |
-| Framer Motion Imports | | |
-| `three` dependency | | |
+| Client Components | 14 | +3 (added missing directives to DomainsSection, Stack, Summary) |
+| Framer Motion Imports | 12 | 0 |
+| `three` dependency | removed | -1 dep |
 
 ### Notes
 
-> (notes on what changed and expected impact)
+> Baseline count of 11 was inaccurate — 3 components used client APIs (useState, motion) without
+> the `'use client'` directive. True client component count is 14. The increase reflects a bug fix,
+> not new client components. `three` dependency removed (was never imported).
+> Build still produces all static routes.
+> No Lighthouse re-run — Phase 1 changes (dependency removal + directive fixes) are not expected to affect scores.
 
 ---
 
@@ -78,17 +83,17 @@ Progressive performance metrics tracking during refactor implementation.
 | Client Components | | |
 | Framer Motion Imports | | |
 
-### Lighthouse Scores
+### Lighthouse Scores (Mobile)
 
-| Metric | `/` | `/about` | `/projects` | `/contact` | Delta vs Baseline |
-|---|---|---|---|---|---|
-| Performance Score | | | | | |
-| LCP | | | | | |
-| FCP | | | | | |
-| TBT | | | | | |
-| CLS | | | | | |
-| INP | | | | | |
-| SEO Score | | | | | |
+| Metric | `/` | `/about` | `/projects` | Delta vs Baseline |
+|---|---|---|---|---|
+| Performance Score | | | | |
+| LCP | | | | |
+| FCP | | | | |
+| TBT | | | | |
+| CLS | | | | |
+| Speed Index | | | | |
+| SEO Score | | | | |
 
 ### Notes
 
@@ -108,17 +113,17 @@ Progressive performance metrics tracking during refactor implementation.
 | Client Components | | |
 | Framer Motion Imports | | |
 
-### Lighthouse Scores
+### Lighthouse Scores (Mobile)
 
-| Metric | `/` | `/about` | `/projects` | `/contact` | Delta vs Baseline |
-|---|---|---|---|---|---|
-| Performance Score | | | | | |
-| LCP | | | | | |
-| FCP | | | | | |
-| TBT | | | | | |
-| CLS | | | | | |
-| INP | | | | | |
-| SEO Score | | | | | |
+| Metric | `/` | `/about` | `/projects` | Delta vs Baseline |
+|---|---|---|---|---|
+| Performance Score | | | | |
+| LCP | | | | |
+| FCP | | | | |
+| TBT | | | | |
+| CLS | | | | |
+| Speed Index | | | | |
+| SEO Score | | | | |
 
 ### Notes
 
@@ -138,17 +143,17 @@ Progressive performance metrics tracking during refactor implementation.
 | Client Components | | |
 | Framer Motion Imports | | |
 
-### Lighthouse Scores
+### Lighthouse Scores (Mobile)
 
-| Metric | `/` | `/about` | `/projects` | `/contact` | Delta vs Baseline |
-|---|---|---|---|---|---|
-| Performance Score | | | | | |
-| LCP | | | | | |
-| FCP | | | | | |
-| TBT | | | | | |
-| CLS | | | | | |
-| INP | | | | | |
-| SEO Score | | | | | |
+| Metric | `/` | `/about` | `/projects` | Delta vs Baseline |
+|---|---|---|---|---|
+| Performance Score | | | | |
+| LCP | | | | |
+| FCP | | | | |
+| TBT | | | | |
+| CLS | | | | |
+| Speed Index | | | | |
+| SEO Score | | | | |
 
 ### Bundle Analysis
 
@@ -170,10 +175,11 @@ Progressive performance metrics tracking during refactor implementation.
 
 | Metric | Baseline | Post-Ph.1 | Post-Ph.2 | Post-Ph.3 | Post-Ph.4/5 | Target |
 |---|---|---|---|---|---|---|
-| Client Components | 11 | | | | | ~5-6 |
-| FM Imports | 12 | | | | | ~4 |
-| Perf Score (/) | | | | | | > 90 |
-| LCP (/) | | | | | | < 2.5s |
-| FCP (/) | | | | | | < 1.8s |
-| TBT (/) | | | | | | < 200ms |
-| CLS (/) | | | | | | < 0.1 |
+| Client Components | 14 | 14 | | | | ~5-6 |
+| FM Imports | 12 | 12 | | | | ~4 |
+| Perf Score (/) | 74 | — | | | | > 90 |
+| LCP (/) | 7.2s | — | | | | < 2.5s |
+| FCP (/) | 0.8s | — | | | | < 1.8s |
+| TBT (/) | 160ms | — | | | | < 200ms |
+| CLS (/) | 0.006 | — | | | | < 0.1 |
+| Speed Index (/) | 2.9s | — | | | | |
