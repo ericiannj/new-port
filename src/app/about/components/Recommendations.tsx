@@ -52,8 +52,12 @@ const Recommendations = () => {
                 />
               </div>
               <div className="flex flex-col items-center">
-                <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-300">
-                  <Icons.about className="h-full w-full" />
+                <div
+                  role="img"
+                  aria-label={`${testimonial.author} avatar placeholder`}
+                  className="h-12 w-12 overflow-hidden rounded-full bg-gray-300"
+                >
+                  <Icons.about className="h-full w-full" aria-hidden="true" />
                 </div>
                 <p className="mt-2 font-semibold">{testimonial.author}</p>
                 <p className="text-xs text-gray-200">{testimonial.role}</p>

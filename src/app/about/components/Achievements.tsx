@@ -8,7 +8,7 @@ const Achievements = () => (
       <li className="flex items-center gap-4">
         <Image
           src={CoffeGif}
-          alt="Coffee animation"
+          alt=""
           width={32}
           height={32}
           className="rounded-full bg-white p-1"
@@ -25,7 +25,7 @@ const Achievements = () => (
       <li className="flex items-center gap-4">
         <Image
           src={CoffeGif}
-          alt="Coffee animation"
+          alt=""
           width={32}
           height={32}
           className="rounded-full bg-white p-1"
@@ -43,7 +43,7 @@ const Achievements = () => (
       <li className="flex items-center gap-4">
         <Image
           src={CoffeGif}
-          alt="Coffee animation"
+          alt=""
           width={32}
           height={32}
           className="rounded-full bg-white p-1"

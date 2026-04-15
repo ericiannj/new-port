@@ -74,7 +74,9 @@ export default function AnimatedProjectCard({
             </a>
           ) : (
             <span
+              role="button"
               aria-disabled="true"
+              tabIndex={-1}
               title="Demo not available"
               className="flex cursor-not-allowed items-center gap-1.5 rounded-md bg-gray-800 px-3 py-1.5 text-sm text-gray-500"
             >

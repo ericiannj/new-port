@@ -7,7 +7,7 @@ const Perspectives = () => (
     <div className="text-fluid-2xl flex flex-col space-y-6">
       <div className="flex items-center gap-4">
         <Image
-          alt="target animation"
+          alt=""
           width={32}
           height={32}
           src={TargetGif}
@@ -20,7 +20,7 @@ const Perspectives = () => (
       </div>
       <div className="flex items-center gap-4">
         <Image
-          alt="target animation"
+          alt=""
           width={32}
           height={32}
           src={TargetGif}
@@ -34,7 +34,7 @@ const Perspectives = () => (
       </div>
       <div className="flex items-center gap-4">
         <Image
-          alt="target animation"
+          alt=""
           width={32}
           height={32}
           src={TargetGif}
@@ -54,7 +54,7 @@ const Perspectives = () => (
         className="flex transform items-center gap-2 rounded-lg p-3 text-slate-300 transition-all duration-300 ease-in-out hover:scale-105 hover:bg-gray-100 hover:text-gray-900"
       >
         <Image
-          alt="resume animation"
+          alt=""
           width={32}
           height={32}
           src={ResumeGif}

@@ -42,7 +42,7 @@ const CustomProfileImage = () => {
         <Image
           onMouseMove={handleMouseMove}
           src={ProfileImage}
-          alt="Profile Image"
+          alt="Eric Junqueira profile photo"
           priority
           quality={100}
           sizes="112px"
