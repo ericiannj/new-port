@@ -36,11 +36,6 @@ const pages = [
     url: '/about',
     icon: <Icons.about />,
   },
-  // {
-  //   title: 'Contact',
-  //   url: '/contact',
-  //   icon: <Icons.contact />,
-  // },
   {
     title: 'Projects',
     url: '/projects',
