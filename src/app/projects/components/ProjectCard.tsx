@@ -1,7 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Code2, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { Icons } from '@/icons';
 import type { Project } from '../data';
 
 type AnimatedProjectCardProps = {
@@ -57,7 +58,7 @@ export default function AnimatedProjectCard({
             aria-label={`${title} source code on GitHub`}
             className="flex items-center gap-1.5 rounded-md bg-gray-700 px-3 py-1.5 text-sm text-white transition-colors hover:bg-gray-600 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
           >
-            <Code2 className="h-4 w-4" aria-hidden="true" />
+            <Icons.github className="h-4 w-4" aria-hidden="true" />
             Code
           </a>
           {hasDemo ? (
