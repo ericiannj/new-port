@@ -1,4 +1,4 @@
-const WellcomeContainer = () => {
+const WelcomeContainer = () => {
   return (
     <div className="animate-fade-in-down flex flex-col justify-center">
       <p className="text-fluid-2xl mb-4">
@@ -22,4 +22,4 @@ const WellcomeContainer = () => {
   );
 };
 
-export default WellcomeContainer;
+export default WelcomeContainer;
