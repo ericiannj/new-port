@@ -1,83 +1,88 @@
-// AnimatedProjectCard.tsx
 'use client';
 import { motion } from 'framer-motion';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
+import { Code2, ExternalLink } from 'lucide-react';
+import type { Project } from '../data';
 
-interface AnimatedProjectCardProps {
-  title: string;
-  image: StaticImageData;
-  link: string;
+type AnimatedProjectCardProps = {
+  project: Project;
   priority?: boolean;
-}
-
-const containerVariants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-  },
-};
-
-const overlayVariants = {
-  initial: {
-    backgroundColor: 'rgba(0, 0, 0, 0)',
-  },
-  hover: {
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-  },
-};
-
-const titleVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  hover: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-    },
-  },
 };
 
 export default function AnimatedProjectCard({
-  title,
-  image,
-  link,
+  project,
   priority = false,
 }: AnimatedProjectCardProps) {
+  const { title, description, stack, image, repo, demo } = project;
+  const hasDemo = Boolean(demo);
+
   return (
-    <motion.div
-      className="relative h-[220px] w-[400px] cursor-pointer overflow-hidden rounded-lg"
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      variants={containerVariants}
+    <motion.article
+      className="flex w-[400px] flex-col overflow-hidden rounded-lg bg-gray-900/60 shadow-lg"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      onClick={() => window.open(link, '_blank', 'noopener,noreferrer')}
     >
-      <Image
-        src={image}
-        alt={title}
-        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-        fill
-        sizes="400px"
-        priority={priority}
-      />
-      <motion.div
-        className="absolute inset-0 flex items-center justify-center"
-        variants={overlayVariants}
-        transition={{ duration: 0.2 }}
-      >
-        <motion.h3
-          className="text-2xl font-bold text-white"
-          variants={titleVariants}
+      <div className="relative h-[180px] w-full">
+        <Image
+          src={image}
+          alt={`${title} preview screenshot`}
+          className="object-cover"
+          fill
+          sizes="400px"
+          priority={priority}
+        />
+      </div>
+      <div className="flex flex-col gap-3 p-4">
+        <h3 className="text-xl font-bold text-white">{title}</h3>
+        <p className="text-sm text-gray-200">{description}</p>
+        <ul
+          className="flex flex-wrap gap-1.5"
+          aria-label={`${title} tech stack`}
         >
-          {title}
-        </motion.h3>
-      </motion.div>
-    </motion.div>
+          {stack.map((tech) => (
+            <li
+              key={tech}
+              className="rounded-full bg-gray-700/70 px-2 py-0.5 text-xs text-gray-100"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-2 flex gap-2">
+          <a
+            href={repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${title} source code on GitHub`}
+            className="flex items-center gap-1.5 rounded-md bg-gray-700 px-3 py-1.5 text-sm text-white transition-colors hover:bg-gray-600 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
+          >
+            <Code2 className="h-4 w-4" aria-hidden="true" />
+            Code
+          </a>
+          {hasDemo ? (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${title} live demo`}
+              className="flex items-center gap-1.5 rounded-md bg-blue-700 px-3 py-1.5 text-sm text-white transition-colors hover:bg-blue-600 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
+            >
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              Demo
+            </a>
+          ) : (
+            <span
+              aria-disabled="true"
+              title="Demo not available"
+              className="flex cursor-not-allowed items-center gap-1.5 rounded-md bg-gray-800 px-3 py-1.5 text-sm text-gray-500"
+            >
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              Demo
+            </span>
+          )}
+        </div>
+      </div>
+    </motion.article>
   );
 }
