@@ -15,17 +15,15 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Stocks Manager',
-    description:
-      'Personal portfolio tracker for stock holdings with automatic price updates and P&L calculations.',
-    stack: ['TypeScript', 'React', 'Node.js'],
+    description: 'A front-end app that consumes a public financial API.',
+    stack: ['React', 'TypeScript'],
     image: StocksManagerImage,
     repo: 'https://github.com/ericiannj/stocks-manager',
   },
   {
     title: 'Indy',
-    description:
-      'Experimental project exploring modern frontend patterns and component architecture.',
-    stack: ['TypeScript', 'React', 'Next.js'],
+    description: 'An idea vault built years ago as a full-stack experiment.',
+    stack: ['JavaScript', 'React', 'Node.js'],
     image: IndyImage,
     repo: 'https://github.com/ericiannj/Indy',
   },
