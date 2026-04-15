@@ -1,4 +1,11 @@
 import ProjectsCarousel from './components/ProjectsCarousel';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description:
+    'Selected projects by Eric Junqueira — web apps, experiments, and open source work.',
+};
 
 export default function Projects() {
   return (

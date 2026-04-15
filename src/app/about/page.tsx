@@ -7,6 +7,13 @@ import {
   Achievements,
   SectionTracker,
 } from './components';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Eric Junqueira — a full stack developer with a front-end focus. Over 5 years of experience across Location Software, Education, and more.',
+};
 
 const sections = [
   { id: 'summary', bgColor: '#0a0a0a', component: Summary },
