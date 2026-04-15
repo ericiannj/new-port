@@ -15,10 +15,7 @@ export default function Navbar() {
           className="flex space-x-8 p-4 md:flex-col md:items-start md:space-y-8 md:space-x-0"
         >
           {pages.map((page) => (
-            <li
-              key={page.title}
-              className="animate-spin-once cursor-pointer"
-            >
+            <li key={page.title} className="animate-spin-once cursor-pointer">
               <Link href={page.url}>{page.icon}</Link>
             </li>
           ))}

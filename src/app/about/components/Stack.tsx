@@ -5,7 +5,7 @@ const Stack = () => {
   return (
     <div className="overflow-y-auto">
       <div className="flex justify-center">
-        <h1 className="text-fluid-4xl mb-4 cursor-pointer font-bold transition-transform duration-200 ease-out hover:scale-[1.02] hover:translate-x-2">
+        <h1 className="text-fluid-4xl mb-4 cursor-pointer font-bold transition-transform duration-200 ease-out hover:translate-x-2 hover:scale-[1.02]">
           My Stack
         </h1>
       </div>

@@ -42,16 +42,18 @@ const AnimatedBackground = () => {
         <div
           key={circle.id}
           className="animate-float absolute rounded-full bg-white/5"
-          style={{
-            width: circle.width,
-            height: circle.height,
-            left: circle.left,
-            top: circle.top,
-            animationDelay: `${circle.delay}s`,
-            '--float-x': `${circle.xOffset}px`,
-            '--float-y': `${circle.yOffset}px`,
-            '--float-duration': `${circle.duration}s`,
-          } as React.CSSProperties}
+          style={
+            {
+              width: circle.width,
+              height: circle.height,
+              left: circle.left,
+              top: circle.top,
+              animationDelay: `${circle.delay}s`,
+              '--float-x': `${circle.xOffset}px`,
+              '--float-y': `${circle.yOffset}px`,
+              '--float-duration': `${circle.duration}s`,
+            } as React.CSSProperties
+          }
         />
       ))}
     </div>
