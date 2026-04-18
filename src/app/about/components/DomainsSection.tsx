@@ -10,7 +10,7 @@ const positions = [
     name: 'Beakyn',
     designation: 'Full Stack Developer',
     country: 'USA',
-    url: 'https://beakyn.com/',
+    url: 'https://www.linkedin.com/company/beakyn',
   },
   {
     id: 'education',
@@ -18,7 +18,7 @@ const positions = [
     name: 'Big Brain',
     designation: 'Full Stack Developer',
     country: 'Brazil',
-    url: 'https://bigbrain.com.br/educacao-publica-secretarias-de-educacao-e-universidades/sala-de-aula-conectada/',
+    url: 'https://bigbrain.com.br',
   },
   {
     id: 'social-networks',
