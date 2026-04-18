@@ -21,7 +21,7 @@ const sections = [
   { id: 'stack', bgColor: 'bg-stack', component: Stack },
   {
     id: 'recommendations',
-    bgColor: 'bg-slate-700',
+    bgColor: 'bg-recommendations',
     component: Recommendations,
   },
   { id: 'perspectives', bgColor: '#0a0a0a', component: Perspectives },
