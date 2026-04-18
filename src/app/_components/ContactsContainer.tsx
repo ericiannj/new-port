@@ -24,7 +24,7 @@ const ContactsContainer = () => {
           label="My resume"
         />
         <ContactIcon
-          href="mailto:ian.developmentbr@gmail.com"
+          href="mailto:ericiannj@gmail.com"
           icon={<Icons.mail />}
           label="Send Email"
         />
