@@ -1,0 +1,14 @@
+{
+  "lighthouseVersion": "11.0.0",
+  "requestedUrl": "https://example.com/projects",
+  "fetchTime": "2026-04-20T12:00:00.000Z",
+  "categories": {
+    "performance": { "score": 0.52 }
+  },
+  "audits": {
+    "largest-contentful-paint": { "numericValue": 5100 },
+    "cumulative-layout-shift": { "numericValue": 0.12 },
+    "first-contentful-paint": { "numericValue": 1800 },
+    "total-blocking-time": { "numericValue": 410 }
+  }
+}
