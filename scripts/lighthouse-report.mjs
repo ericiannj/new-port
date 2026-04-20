@@ -56,3 +56,96 @@ export async function parseReports(dir) {
 
   return results;
 }
+
+const CELL_COLORS = {
+  good: '#d1fae5',
+  warn: '#fef3c7',
+  poor: '#fecaca',
+};
+
+export function renderEmail({
+  commitSha,
+  commitMessage,
+  runUrl,
+  commitUrl,
+  results,
+}) {
+  const shortSha = commitSha.slice(0, 7);
+  const firstLine = commitMessage.split('\n')[0];
+  const subject = `🚦 Lighthouse — ${shortSha} — ${firstLine}`;
+
+  const mobile = results.filter((r) => r.preset === 'mobile');
+  const desktop = results.filter((r) => r.preset === 'desktop');
+
+  const html = `
+<div style="font-family: -apple-system, Segoe UI, sans-serif; max-width: 680px; margin: 0 auto; color: #111;">
+  <h1 style="font-size: 20px; margin-bottom: 4px;">Lighthouse Report</h1>
+  <p style="color: #555; margin-top: 0;">
+    <strong>Commit:</strong>
+    <a href="${escapeHtml(commitUrl)}" style="color: #2563eb; text-decoration: none;">${shortSha}</a>
+    · ${escapeHtml(firstLine)}
+  </p>
+  <h2 style="font-size: 16px; margin-top: 24px;">📱 Mobile</h2>
+  ${renderTable(mobile)}
+  <h2 style="font-size: 16px; margin-top: 24px;">🖥️ Desktop</h2>
+  ${renderTable(desktop)}
+  <p style="margin-top: 32px;">
+    <a href="${escapeHtml(runUrl)}" style="color: #2563eb;">View full reports →</a>
+  </p>
+</div>`.trim();
+
+  return { subject, html };
+}
+
+function renderTable(rows) {
+  const header = `
+    <tr style="background: #f3f4f6;">
+      <th style="padding: 8px; text-align: left;">Route</th>
+      <th style="padding: 8px;">Perf.</th>
+      <th style="padding: 8px;">LCP</th>
+      <th style="padding: 8px;">TBT</th>
+      <th style="padding: 8px;">CLS</th>
+      <th style="padding: 8px;">FCP</th>
+    </tr>`;
+  const body = rows.map(renderRow).join('');
+  return `<table style="border-collapse: collapse; width: 100%; font-size: 14px;">${header}${body}</table>`;
+}
+
+function renderRow({ route, metrics }) {
+  return `
+    <tr>
+      <td style="padding: 8px; border-bottom: 1px solid #e5e7eb;">${escapeHtml(route)}</td>
+      ${renderCell('performance', metrics.performance, (v) => String(v))}
+      ${renderCell('lcp', metrics.lcp, formatMs)}
+      ${renderCell('tbt', metrics.tbt, formatMs)}
+      ${renderCell('cls', metrics.cls, formatCls)}
+      ${renderCell('fcp', metrics.fcp, formatMs)}
+    </tr>`;
+}
+
+function renderCell(metric, value, formatter) {
+  if (value === null || value === undefined) {
+    return `<td style="padding: 8px; text-align: center; background: #f9fafb; border-bottom: 1px solid #e5e7eb;">—</td>`;
+  }
+  const level = classifyMetric(metric, value);
+  const bg = CELL_COLORS[level];
+  return `<td style="padding: 8px; text-align: center; background: ${bg}; border-bottom: 1px solid #e5e7eb;">${formatter(value)}</td>`;
+}
+
+function formatMs(v) {
+  return v < 1000 ? `${Math.round(v)} ms` : `${(v / 1000).toFixed(1)} s`;
+}
+
+function formatCls(v) {
+  return v.toFixed(2);
+}
+
+function escapeHtml(s) {
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[
+        c
+      ],
+  );
+}
