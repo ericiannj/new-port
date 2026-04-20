@@ -1,5 +1,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { Resend } from 'resend';
 
 const THRESHOLDS = {
   performance: { good: 90, warn: 50 },
@@ -53,6 +55,11 @@ export async function parseReports(dir) {
 
     results.push({ preset, route, metrics: extractMetrics(report) });
   }
+
+  results.sort((a, b) => {
+    if (a.preset !== b.preset) return a.preset.localeCompare(b.preset);
+    return a.route.localeCompare(b.route);
+  });
 
   return results;
 }
@@ -150,13 +157,11 @@ function escapeHtml(s) {
   );
 }
 
-import { Resend } from 'resend';
-
 async function main() {
   const {
     RESEND_API_KEY,
     COMMIT_SHA = '',
-    COMMIT_MESSAGE = '(no commit message)',
+    COMMIT_MESSAGE,
     RUN_URL = '',
     COMMIT_URL = '',
   } = process.env;
@@ -174,7 +179,7 @@ async function main() {
 
   const { subject, html } = renderEmail({
     commitSha: COMMIT_SHA,
-    commitMessage: COMMIT_MESSAGE,
+    commitMessage: COMMIT_MESSAGE || '(no commit message)',
     runUrl: RUN_URL,
     commitUrl: COMMIT_URL,
     results,
@@ -196,7 +201,7 @@ async function main() {
   console.log(`Email sent (id=${data?.id}); ${results.length} reports.`);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
   main().catch((err) => {
     console.error(err);
     process.exit(1);
