@@ -149,3 +149,56 @@ function escapeHtml(s) {
       ],
   );
 }
+
+import { Resend } from 'resend';
+
+async function main() {
+  const {
+    RESEND_API_KEY,
+    COMMIT_SHA = '',
+    COMMIT_MESSAGE = '(no commit message)',
+    RUN_URL = '',
+    COMMIT_URL = '',
+  } = process.env;
+
+  if (!RESEND_API_KEY) {
+    console.error('RESEND_API_KEY is required');
+    process.exit(1);
+  }
+
+  const results = await parseReports('./reports');
+  if (results.length === 0) {
+    console.error('No Lighthouse reports found in ./reports');
+    process.exit(1);
+  }
+
+  const { subject, html } = renderEmail({
+    commitSha: COMMIT_SHA,
+    commitMessage: COMMIT_MESSAGE,
+    runUrl: RUN_URL,
+    commitUrl: COMMIT_URL,
+    results,
+  });
+
+  const resend = new Resend(RESEND_API_KEY);
+  const { data, error } = await resend.emails.send({
+    from: 'onboarding@resend.dev',
+    to: 'ericiannj@gmail.com',
+    subject,
+    html,
+  });
+
+  if (error) {
+    console.error('Resend error:', error);
+    process.exit(1);
+  }
+
+  console.log(`Email sent (id=${data?.id}); ${results.length} reports.`);
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
