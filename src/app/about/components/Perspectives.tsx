@@ -1,5 +1,5 @@
-import TargetGif from '../../../assets/gifs/target.gif';
-import ResumeGif from '../../../assets/gifs/resume.gif';
+import TargetGif from '../../../assets/gifs/target.webp';
+import ResumeGif from '../../../assets/gifs/resume.webp';
 import Image from 'next/image';
 
 const Perspectives = () => (

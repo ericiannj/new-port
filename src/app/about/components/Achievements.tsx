@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import CoffeGif from '../../../assets/gifs/coffe.gif';
+import CoffeGif from '../../../assets/gifs/coffe.webp';
 
 const Achievements = () => (
   <div className="text-fluid-2xl flex w-full flex-col gap-8">
