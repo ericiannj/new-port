@@ -19,9 +19,14 @@ export default function TransitionWrapper({
     return () => clearTimeout(timer);
   }, []);
 
-  if (showTransition) {
-    return <HomeTransition onEnd={handleEndTransition} />;
-  }
-
-  return <>{children}</>;
+  return (
+    <>
+      {showTransition && (
+        <div className="fixed inset-0 z-50">
+          <HomeTransition onEnd={handleEndTransition} />
+        </div>
+      )}
+      {children}
+    </>
+  );
 }
