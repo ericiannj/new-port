@@ -22,11 +22,11 @@ export default function TransitionWrapper({
   return (
     <>
       {showTransition && (
-        <div className="fixed inset-0 z-50">
+        <div className="fixed inset-0 z-100">
           <HomeTransition onEnd={handleEndTransition} />
         </div>
       )}
-      {children}
+      <div className={showTransition ? 'intro-playing' : ''}>{children}</div>
     </>
   );
 }
