@@ -44,7 +44,7 @@ const CustomProfileImage = () => {
           src={ProfileImage}
           alt="Eric Junqueira profile photo"
           priority
-          quality={100}
+          quality={85}
           sizes="112px"
           className="relative m-0! h-28 w-28 rounded-full object-cover object-top p-0! transition duration-500 group-hover:z-30 group-hover:scale-105"
         />
