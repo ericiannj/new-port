@@ -19,24 +19,31 @@ export default function AnimatedProjectCard({
 
   return (
     <motion.article
-      className="flex w-[400px] flex-col overflow-hidden rounded-lg bg-gray-900/60 shadow-lg"
+      className="mx-auto flex w-full max-w-[min(25rem,calc(100vw-4rem))] min-w-0 flex-col overflow-hidden rounded-lg bg-gray-900/60 shadow-lg md:max-w-[400px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative h-[180px] w-full">
+      <div className="relative h-[150px] w-full sm:h-[170px] md:h-[180px]">
         <Image
           src={image}
           alt={`${title} preview screenshot`}
           className="object-cover"
           fill
-          sizes="400px"
+          sizes="(max-width: 768px) 100vw, 400px"
           priority={priority}
         />
       </div>
-      <div className="flex flex-col gap-3 p-4">
-        <h3 className="text-xl font-bold text-white">{title}</h3>
-        <p className="text-sm text-gray-200">{description}</p>
+      <div className="flex min-w-0 flex-col gap-2 p-3 sm:gap-3 sm:p-4">
+        <h3 className="text-lg font-bold wrap-break-word text-white sm:text-xl">
+          {title}
+        </h3>
+        <p
+          className="line-clamp-3 min-h-[3lh] text-sm leading-relaxed wrap-break-word text-gray-200"
+          title={description}
+        >
+          {description}
+        </p>
         <ul
           className="flex flex-wrap gap-1.5"
           aria-label={`${title} tech stack`}

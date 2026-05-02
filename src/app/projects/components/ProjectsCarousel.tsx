@@ -27,12 +27,20 @@ const ProjectsCarousel = () => {
   };
 
   return (
-    <div className="mt-12 flex flex-col items-center gap-4">
-      <motion.div className="flex items-center justify-center gap-8" layout>
+    <div className="mt-6 flex w-full max-w-full flex-col items-center gap-4 md:mt-12">
+      <motion.div
+        className="flex w-full max-w-full items-center justify-center gap-0 md:gap-8"
+        layout
+      >
         {orderedProjects.map((project, index) => (
           <motion.div
             key={project.title}
             layout
+            className={
+              index === 1
+                ? 'w-full max-w-full md:w-auto'
+                : 'hidden w-full max-w-full md:block md:w-auto'
+            }
             animate={{
               scale: index === 1 ? 1.05 : 0.9,
               opacity: index === 1 ? 1 : 0.55,
