@@ -515,8 +515,8 @@ cp scripts/fixtures/*.json reports/
 RESEND_API_KEY="re_your_real_key_here" \
   COMMIT_SHA="local0000000000000000000000000000000000" \
   COMMIT_MESSAGE="local test: lighthouse email" \
-  RUN_URL="https://github.com/ericiannj/portfolio-new-port/actions" \
-  COMMIT_URL="https://github.com/ericiannj/portfolio-new-port" \
+  RUN_URL="https://github.com/ericiannj/ej-portfolio/actions" \
+  COMMIT_URL="https://github.com/ericiannj/ej-portfolio" \
   node scripts/lighthouse-report.mjs
 ```
 
