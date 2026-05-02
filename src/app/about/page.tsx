@@ -38,6 +38,7 @@ export default function About() {
               key={section.id}
               id={section.id}
               bgColor={section.bgColor}
+              variant={section.id === 'perspectives' ? 'auto' : 'tall'}
             >
               <Component />
             </AboutSection>
