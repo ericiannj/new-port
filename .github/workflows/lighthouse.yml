@@ -64,7 +64,19 @@ jobs:
     if: ${{ !cancelled() && needs.audit.result != 'skipped' }}
     runs-on: ubuntu-latest
     steps:
+      # Checkout the deployed revision so we can read the real commit subject (deployment.description is often empty for Vercel).
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+          fetch-depth: 1
+
+      - name: Commit metadata for email
+        id: deploy_commit
+        run: |
+          echo "sha=${{ github.event.deployment.sha }}" >> "$GITHUB_OUTPUT"
+          echo "message<<LIGHTHOUSE_COMMIT_MSG_EOF" >> "$GITHUB_OUTPUT"
+          git log -1 --pretty=%s >> "$GITHUB_OUTPUT"
+          echo "LIGHTHOUSE_COMMIT_MSG_EOF" >> "$GITHUB_OUTPUT"
 
       - uses: pnpm/action-setup@v4
 
@@ -84,8 +96,8 @@ jobs:
       - name: Send summary email
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          COMMIT_SHA: ${{ github.sha }}
-          COMMIT_MESSAGE: ${{ github.event.deployment.description }}
+          COMMIT_SHA: ${{ steps.deploy_commit.outputs.sha }}
+          COMMIT_MESSAGE: ${{ steps.deploy_commit.outputs.message }}
           RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          COMMIT_URL: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
+          COMMIT_URL: https://github.com/${{ github.repository }}/commit/${{ steps.deploy_commit.outputs.sha }}
         run: node scripts/lighthouse-report.mjs
