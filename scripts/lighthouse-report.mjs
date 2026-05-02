@@ -39,10 +39,22 @@ export function extractMetrics(report) {
   };
 }
 
-const REPORT_PATTERN = /^lighthouse-(mobile|desktop)-(.+)\.json$/;
+// Lighthouse writes `*.report.json` when using --output-path with multiple formats.
+const REPORT_PATTERN =
+  /^lighthouse-(mobile|desktop)-([\w-]+)\.(?:report\.)?json$/;
 
 export async function parseReports(dir) {
-  const entries = await readdir(dir);
+  let entries;
+  try {
+    entries = await readdir(dir);
+  } catch (err) {
+    if (err && err.code === 'ENOENT') {
+      throw new Error(
+        `${dir} is missing. Check that Lighthouse audit jobs uploaded artifacts (.report.json) and download-artifact ran successfully.`,
+      );
+    }
+    throw err;
+  }
   const results = [];
 
   for (const entry of entries) {

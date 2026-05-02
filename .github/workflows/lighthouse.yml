@@ -53,8 +53,8 @@ jobs:
         with:
           name: lighthouse-${{ matrix.preset }}-${{ steps.name.outputs.value }}
           path: |
-            lighthouse-${{ matrix.preset }}-${{ steps.name.outputs.value }}.html
-            lighthouse-${{ matrix.preset }}-${{ steps.name.outputs.value }}.json
+            lighthouse-${{ matrix.preset }}-${{ steps.name.outputs.value }}.report.html
+            lighthouse-${{ matrix.preset }}-${{ steps.name.outputs.value }}.report.json
           retention-days: 90
 
   notify:
