@@ -48,12 +48,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubik.className} h-full antialiased`}>
-        <div>
+        <div className="relative flex min-h-dvh flex-col">
           <LazyAnimatedBackground />
           <TransitionWrapper>
             <>
               <Navbar />
-              {children}
+              <div className="flex min-h-0 w-full flex-1 flex-col">{children}</div>
               <ContactsContainer />
             </>
           </TransitionWrapper>

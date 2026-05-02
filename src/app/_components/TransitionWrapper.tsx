@@ -26,7 +26,11 @@ export default function TransitionWrapper({
           <HomeTransition onEnd={handleEndTransition} />
         </div>
       )}
-      <div className={showTransition ? 'intro-playing' : ''}>{children}</div>
+      <div
+        className={`flex min-h-0 w-full flex-1 flex-col ${showTransition ? 'intro-playing' : ''}`}
+      >
+        {children}
+      </div>
     </>
   );
 }

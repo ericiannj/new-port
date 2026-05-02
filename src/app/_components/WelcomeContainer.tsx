@@ -1,7 +1,7 @@
 const WelcomeContainer = () => {
   return (
     <div className="animate-slide-in-down flex flex-col justify-center">
-      <p className="text-fluid-2xl mb-4">
+      <p className="text-fluid-2xl mb-2 md:mb-4">
         Hey there{''}
         <span className="animate-wave mr-1 ml-2 inline-block">👋🏾</span> , my
         name is

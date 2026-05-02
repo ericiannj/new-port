@@ -12,12 +12,12 @@ import { useState } from 'react';
 const ContactsContainer = () => {
   return (
     <motion.div
-      className="left-16 md:fixed md:bottom-0"
+      className="pointer-events-none fixed right-0 bottom-0 left-0 z-40 md:right-auto md:left-16 md:w-auto"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="mb-4 flex justify-center space-x-4 md:mb-0 md:flex-col md:items-center md:justify-end md:space-y-4 md:space-x-0">
+      <div className="pointer-events-auto flex justify-center space-x-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:mb-0 md:flex-col md:items-center md:justify-end md:space-y-4 md:space-x-0 md:pb-0">
         <ContactIcon
           href="/resume.pdf"
           icon={<Icons.resume />}
