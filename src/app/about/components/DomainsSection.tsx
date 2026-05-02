@@ -50,7 +50,7 @@ const DomainsSection = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="mt-2 w-full">
       <ul>
         {positions.map((item) => (
           <li
@@ -58,22 +58,32 @@ const DomainsSection = () => {
             id={item.id}
             onMouseEnter={() => handleMouseEnter(item.id)}
             onMouseLeave={handleMouseLeave}
-            className={`flex cursor-pointer items-center justify-between rounded-lg p-2 transition-all duration-200 ${
+            className={`flex cursor-pointer items-center justify-between gap-3 rounded-lg p-2 transition-all duration-200 ${
               selectedPositionId === item.id ? 'bg-blue-300' : ''
             }`}
             onClick={(event) => handleClick(event, item.url)}
           >
-            <span
-              className={`text-2xl ${selectedPositionId === item.id ? 'text-gray-900' : 'text-gray-50'}`}
-            >
-              • {item.label}
-            </span>
+            <div className="flex min-w-0 flex-1 items-baseline gap-x-2">
+              <span
+                className={`shrink-0 ${selectedPositionId === item.id ? 'text-gray-900' : 'text-gray-50'}`}
+                aria-hidden
+              >
+                •
+              </span>
+              <span
+                className={`min-w-0 text-pretty ${selectedPositionId === item.id ? 'text-gray-900' : 'text-gray-50'}`}
+              >
+                {item.label}
+              </span>
+            </div>
             <div
-              className={`transition-opacity duration-200 ${
-                selectedPositionId === item.id ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={
+                selectedPositionId === item.id
+                  ? 'flex shrink-0 items-center'
+                  : 'hidden'
+              }
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 whitespace-nowrap">
                 <div className="flex items-center text-gray-900">
                   <MapPin size={14} />
                   <span className="ml-1 text-xs">{item.country}</span>
