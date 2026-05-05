@@ -39,7 +39,7 @@ const Recommendations = () => {
               className="flex flex-col items-center transition-opacity duration-300"
             >
               <div
-                className={`${testimonial.bgColor} hover-card relative mb-8 flex h-80 flex-col rounded-lg p-6 shadow-lg`}
+                className={`${testimonial.bgColor} hover-card relative mb-8 flex h-96 flex-col rounded-lg p-6 shadow-lg`}
               >
                 <h3 className="mb-4 text-center text-xl font-semibold text-white">
                   {testimonial.title}
@@ -83,7 +83,7 @@ const Recommendations = () => {
         </button>
       </div>
       <div className="mt-12 flex items-center gap-2">
-        <span className="text-gray-200">See more in my</span>
+        <span className="text-gray-200">See more on my</span>
         <a
           href="https://www.linkedin.com/in/eric-junqueira/"
           target="_blank"
