@@ -14,9 +14,9 @@ const Summary = () => (
       .
     </p>
     <p className="indent-8">
-      For over{' '}
+      Over the past{' '}
       <span className="relative">
-        <span className="relative z-10">5</span>
+        <span className="relative z-10">5+</span>
         <span className="absolute right-0 bottom-[-4px] left-0 h-1 bg-linear-to-r from-yellow-500 via-purple-500 to-blue-500" />
       </span>{' '}
       years of work experience, I had the opportunity in projects of the

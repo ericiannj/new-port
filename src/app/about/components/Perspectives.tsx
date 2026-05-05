@@ -14,8 +14,8 @@ const Perspectives = () => (
           className="rounded-full bg-white p-1"
         />
         <p>
-          Currently, I&apos;m primarily focused on front-end engineering, with
-          over 70% of my work in this area.
+          Today, most of my work is centered on front-end engineering, which
+          represents over 70% of my day-to-day.
         </p>
       </div>
       <div className="flex items-center gap-4">
@@ -27,9 +27,9 @@ const Perspectives = () => (
           className="rounded-full bg-white p-1"
         />
         <p>
-          Alongside this, I&apos;m enhancing my back-end skills, especially with
-          JavaScript technologies like NestJS and Express.js, and exploring the
-          Go programming language.
+          At the same time, I continue to grow as a full-stack developer,
+          deepening my backend experience with Node.js, especially using NestJS
+          and Express.js.
         </p>
       </div>
       <div className="flex items-center gap-4">
@@ -41,8 +41,22 @@ const Perspectives = () => (
           className="rounded-full bg-white p-1"
         />
         <p>
-          This helps me stay versatile and meet the changing needs of the tech
-          industry.
+          More recently, I&apos;ve also been contributing to AI-powered
+          products, helping build experiences that make the use of AI more
+          reliable, transparent, and practical.
+        </p>
+      </div>
+      <div className="flex items-center gap-4">
+        <Image
+          alt=""
+          width={32}
+          height={32}
+          src={TargetGif}
+          className="rounded-full bg-white p-1"
+        />
+        <p>
+          I enjoy creating products that balance usability, scalability, and
+          thoughtful engineering.
         </p>
       </div>
     </div>
