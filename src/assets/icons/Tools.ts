@@ -68,7 +68,7 @@ export const tools = [
     ],
   },
   {
-    category: 'Back-end',
+    category: 'Back-end & Infrastructure',
     tools: [
       {
         name: 'Node.js',
@@ -83,16 +83,12 @@ export const tools = [
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg',
       },
       {
-        name: 'Go',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg',
-      },
-      {
         name: 'AWS',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
       },
       {
-        name: 'Firebase',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain-wordmark.svg',
+        name: 'Supabase',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg',
       },
     ],
   },
