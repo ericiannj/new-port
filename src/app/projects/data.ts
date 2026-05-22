@@ -1,7 +1,7 @@
 import type { StaticImageData } from 'next/image';
-import StocksManagerImage from '../../assets/images/stocks-manager.png';
+import VanillaCountriesImage from '../../assets/images/vanilla-countries.png';
+import TypoTuneImage from '../../assets/images/typotune.png';
 import Web3VoteImage from '../../assets/images/web3vote.png';
-import IndyImage from '../../assets/images/indy.png';
 
 export type Project = {
   title: string;
@@ -14,18 +14,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Stocks Manager',
-    description: 'A front-end app that consumes a public financial API.',
-    stack: ['React', 'TypeScript'],
-    image: StocksManagerImage,
-    repo: 'https://github.com/ericiannj/stocks-manager',
+    title: 'Vanilla Countries',
+    description:
+      'Interactive world atlas with zoom, pan, country details, and a known-countries tracker — built with zero frameworks.',
+    stack: ['HTML', 'CSS', 'JavaScript'],
+    image: VanillaCountriesImage,
+    repo: 'https://github.com/ericiannj/vanilla-countries',
+    demo: 'https://countries.ericjunqueira.com',
   },
   {
-    title: 'Indy',
-    description: 'An idea vault built years ago as a full-stack experiment.',
-    stack: ['JavaScript', 'React', 'Node.js'],
-    image: IndyImage,
-    repo: 'https://github.com/ericiannj/Indy',
+    title: 'TypoTune',
+    description:
+      'AI-powered text editor that rewrites and explains English corrections via a server-side Groq integration.',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Groq AI'],
+    image: TypoTuneImage,
+    repo: 'https://github.com/ericiannj/typotune',
+    demo: 'https://typotune.ericjunqueira.com',
   },
   {
     title: 'Web3Vote',
