@@ -1,5 +1,17 @@
 @import 'tailwindcss';
 
+@property --float-x {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --float-y {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -20,7 +32,7 @@
   --animate-scale-in: scale-in 0.5s ease-out forwards;
   --animate-wave: wave 1s ease-in-out infinite;
   --animate-spin-slow: spin-slow 5s linear infinite;
-  --animate-float: float var(--float-duration) linear infinite;
+  --animate-float: float 1s linear infinite;
   --animate-spin-once: spin-slow 0.25s ease-out;
 
   @keyframes fade-in {
