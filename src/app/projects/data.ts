@@ -1,7 +1,7 @@
 import type { StaticImageData } from 'next/image';
 import VanillaCountriesImage from '../../assets/images/vanilla-countries.png';
 import TypoTuneImage from '../../assets/images/typotune.png';
-import Web3VoteImage from '../../assets/images/web3vote.png';
+import PrismImage from '../../assets/images/prism.png';
 
 export type Project = {
   title: string;
@@ -32,11 +32,20 @@ export const projects: Project[] = [
     demo: 'https://typotune.ericjunqueira.com',
   },
   {
-    title: 'Web3Vote',
+    title: 'Prism',
     description:
-      'On-chain voting prototype demonstrating smart-contract interaction and wallet integration.',
-    stack: ['Solidity', 'TypeScript', 'Ethers.js'],
-    image: Web3VoteImage,
-    repo: 'https://github.com/ericiannj/web3vote',
+      'Full-stack RAG platform where users upload documents and query a chat interface that retrieves from three sources: personal knowledge base, model training, and the web.',
+    stack: [
+      'React',
+      'TypeScript',
+      'Express',
+      'PostgreSQL',
+      'pgvector',
+      'OpenRouter',
+      'Tavily',
+    ],
+    image: PrismImage,
+    repo: 'https://github.com/ericiannj/prism',
+    demo: 'https://prism.ericjunqueira.com',
   },
 ];
