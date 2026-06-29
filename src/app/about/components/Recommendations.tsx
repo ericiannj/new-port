@@ -68,14 +68,14 @@ const Recommendations = () => {
       </div>
       <div className="mt-8 flex gap-4">
         <button
-          className="rounded-full bg-gray-800/50 p-1.5 transition-all hover:bg-gray-800/70"
+          className="cursor-pointer rounded-full bg-gray-800/50 p-1.5 transition-all hover:bg-gray-800/70"
           onClick={handlePrevious}
           aria-label="Previous testimonials"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
         <button
-          className="rounded-full bg-gray-800/50 p-1.5 transition-all hover:bg-gray-800/70"
+          className="cursor-pointer rounded-full bg-gray-800/50 p-1.5 transition-all hover:bg-gray-800/70"
           onClick={handleNext}
           aria-label="Next testimonials"
         >

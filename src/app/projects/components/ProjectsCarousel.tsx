@@ -57,7 +57,7 @@ const ProjectsCarousel = () => {
       <div className="mt-4 flex gap-4">
         <motion.button
           aria-label="Previous project"
-          className="rounded-full bg-gray-800/50 p-1.5 transition-colors hover:bg-gray-800/70 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
+          className="cursor-pointer rounded-full bg-gray-800/50 p-1.5 transition-colors hover:bg-gray-800/70 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={handlePrevious}
@@ -66,7 +66,7 @@ const ProjectsCarousel = () => {
         </motion.button>
         <motion.button
           aria-label="Next project"
-          className="rounded-full bg-gray-800/50 p-1.5 transition-colors hover:bg-gray-800/70 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
+          className="cursor-pointer rounded-full bg-gray-800/50 p-1.5 transition-colors hover:bg-gray-800/70 focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:outline-none"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={handleNext}
