@@ -10,7 +10,7 @@ const positions = [
     name: 'Beakyn',
     designation: 'Full Stack Developer',
     country: 'USA',
-    url: 'https://www.linkedin.com/company/beakyn',
+    url: 'https://www.linkedin.com/company/beakynco/',
   },
   {
     id: 'education',
