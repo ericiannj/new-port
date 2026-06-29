@@ -1,7 +1,17 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import {
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  useCallback,
+} from 'react';
 import HomeTransition from './HomeTransition';
+
+type IntroContextType = { introReady: boolean };
+const IntroContext = createContext<IntroContextType>({ introReady: false });
+export const useIntro = () => useContext(IntroContext);
 
 export default function TransitionWrapper({
   children,
@@ -9,18 +19,20 @@ export default function TransitionWrapper({
   children: React.ReactNode;
 }) {
   const [showTransition, setShowTransition] = useState(true);
+  const [introReady, setIntroReady] = useState(false);
 
-  const handleEndTransition = () => {
+  const handleEndTransition = useCallback(() => {
     setShowTransition(false);
-  };
+    setIntroReady(true);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(handleEndTransition, 2000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [handleEndTransition]);
 
   return (
-    <>
+    <IntroContext.Provider value={{ introReady }}>
       {showTransition && (
         <div className="fixed inset-0 z-100">
           <HomeTransition onEnd={handleEndTransition} />
@@ -31,6 +43,6 @@ export default function TransitionWrapper({
       >
         {children}
       </div>
-    </>
+    </IntroContext.Provider>
   );
 }

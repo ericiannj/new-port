@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import { Icons } from '@/icons';
+import { useIntro } from '@/app/_components/TransitionWrapper';
 import type { Project } from '../data';
 
 type AnimatedProjectCardProps = {
@@ -16,12 +17,13 @@ export default function AnimatedProjectCard({
 }: AnimatedProjectCardProps) {
   const { title, description, stack, image, repo, demo } = project;
   const hasDemo = Boolean(demo);
+  const { introReady } = useIntro();
 
   return (
     <motion.article
       className="mx-auto flex w-full max-w-[min(25rem,calc(100vw-4rem))] min-w-0 flex-col overflow-hidden rounded-lg bg-gray-900/60 shadow-lg md:max-w-[400px]"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: introReady ? 1 : 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="relative h-[150px] w-full sm:h-[170px] md:h-[180px]">
